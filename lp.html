@@ -150,6 +150,36 @@ h2 {
 .quiet h3 { font-size: 16.5px; font-weight: 700; }
 .quiet p { font-size: 14.5px; color: var(--ink-soft); margin-top: 8px; text-wrap: pretty; }
 
+/* ── コウの話 ── */
+.story { border-top: 1px solid var(--line); padding-bottom: 72px; }
+.story-photo { margin: 28px auto 0; max-width: 320px; }
+.story-photo img {
+  width: 100%; border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(6,44,38,0.13);
+}
+.story-photo figcaption {
+  font-size: 12.5px; color: var(--ink-faint); text-align: center; margin-top: 12px;
+}
+.story-body { max-width: 620px; margin: 0 auto; }
+.story-body p {
+  font-size: 15px; color: var(--ink-soft); line-height: 2.05;
+  margin-top: 20px; text-wrap: pretty;
+}
+.story-pull {
+  text-align: center; margin: 34px auto; max-width: 620px;
+  padding-top: 30px; border-top: 1px solid var(--line);
+}
+.story-pull span {
+  display: block; font-size: 18px; font-weight: 700;
+  color: var(--accent-dark); line-height: 2.0;
+}
+.story-sign {
+  text-align: center; margin: 38px auto 0; max-width: 620px;
+  padding-top: 28px; border-top: 1px solid var(--line);
+  font-size: 15.5px; font-weight: 700; color: var(--accent-dark);
+  line-height: 1.95; text-wrap: pretty;
+}
+
 /* ── 料金 ── */
 .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 26px; }
 .plan {
@@ -324,6 +354,52 @@ footer a { text-decoration: none; }
         開発者があなたの記録を見ることはできません。
       </p>
     </div>
+  </section>
+
+  <section class="story">
+    <div class="sec-label">Story</div>
+    <h2>コウのこと。</h2>
+
+    <figure class="story-photo">
+      <img src="img/kou.jpg" alt="生前のコウ。川沿いの散歩道で、口を開けて笑うような表情でこちらを見上げている" loading="lazy">
+      <figcaption>コウ</figcaption>
+    </figure>
+
+    <div class="story-body">
+      <p>2026年8月22日にWandaryというアプリを作りました。<br>1年前のその日は、愛犬コウが虹の橋を渡りました。</p>
+
+      <p>保護犬だったコウがうちに来たのは3歳のときでした。家のことも、トイレのことも、外のことも、何ひとつ知らないところからのスタートで、先住犬のイブの後ろをついて回りながら、少しずつ覚えていきました。</p>
+
+      <p>できることが増えては、また失敗して。その繰り返しで、いつのまにか家族になっていました。</p>
+
+      <p>12歳で大病を患ってからは、家族みんなで看病しました。常にコウの様子が気になり、ごはんはどれくらい食べれたか。トイレは出たか。今日はどんな様子だったか。毎日、目を離さずに見ていたつもりでした。</p>
+
+      <p>それでも通院時に病院で先生に聞かれたとき、うまく答えられませんでした。</p>
+    </div>
+
+    <blockquote class="story-pull">
+      <span>いつからですか。</span>
+      <span>何日続いていますか。</span>
+      <span>前回と比べてどうですか。</span>
+    </blockquote>
+
+    <div class="story-body">
+      <p>あんなに毎日見ていたのに、毎日いろんなことがありすぎて、いざというときに正確に思い出せない。</p>
+
+      <p>コウは自分の言葉で説明できません。だから、事実を正確に伝えるのは飼い主がしてあげないといけません。</p>
+
+      <p>同じことで困っている飼い主が、きっといる。そう思って、Wandaryを作りました。</p>
+
+      <p>犬の毎日をワンタップで記録して、診察室でそのまま先生に見せられる形にまとめるアプリです。</p>
+
+      <p>解釈も判断もしません。それは先生の仕事なので。こちらの仕事は、伝えたいことが伝わる形に記録を整えるところまでです。</p>
+
+      <p>至らないところは、まだたくさんあると思います。ただ、一人の飼い主としての想いは、できるかぎり詰めました。</p>
+
+      <p>我が子を大切にしている方に、使ってもらえたらうれしいです。</p>
+    </div>
+
+    <p class="story-sign">コウがきっかけで、このアプリが作れたよ。<br>ありがとう。</p>
   </section>
 
   <section style="padding-top: 0;">
