@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wandary（ワンダリー）— 愛犬の毎日を、3秒で残す。犬の健康記録アプリ</title>
+<meta name="description" content="ごはん・散歩・ようすをワンタップで記録。「いつもと違う」にそっと気づけて、動物病院ではそのまま見せられる。iPhone用の犬の健康記録アプリ、無料ではじめられます。">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wandary — 愛犬の毎日を、3秒で残す。">
+<meta property="og:description" content="ごはん・散歩・ようすをワンタップで記録。「いつもと違う」にそっと気づけて、動物病院ではそのまま見せられる。">
+<meta property="og:image" content="https://arch-mizoken.github.io/wandary-site/img/ogp.png">
+<meta property="og:url" content="https://arch-mizoken.github.io/wandary-site/lp.html">
+<meta property="og:site_name" content="Wandary">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wandary — 愛犬の毎日を、3秒で残す。">
+<meta name="twitter:description" content="ごはん・散歩・ようすをワンタップで記録。「いつもと違う」にそっと気づけて、動物病院ではそのまま見せられる。">
+<meta name="twitter:image" content="https://arch-mizoken.github.io/wandary-site/img/ogp.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --accent: #0E9484;
+  --accent-dark: #0D7A6E;
+  --accent-light: #1FBFA9;
+  --tint: #E7F5F2;
+  --warn: #C2603F;
+  --warn-tint: #FCEFE8;
+  --paper: #F7FBFA;
+  --card: #FFFFFF;
+  --ink: #22332F;
+  --ink-soft: #4A6B65;
+  --ink-faint: #8AA39D;
+  --line: #DDEBE7;
+  --cream: #FDF8EC;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.9;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent-dark); }
+a:hover { color: var(--accent); }
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+/* ── ヒーロー ── */
+.hero {
+  background: linear-gradient(165deg, #21C4AD 0%, #14A594 45%, #0C8B7C 100%);
+  color: var(--cream);
+  padding: 44px 20px 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 2; }
+.brandmark { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.brandmark svg { width: 42px; height: 42px; }
+.brandmark .name {
+  font-size: 30px; font-weight: 900; letter-spacing: 0.5px; line-height: 1;
+}
+.hero h1 {
+  font-size: 30px; font-weight: 900; line-height: 1.5; margin-top: 26px;
+  text-wrap: pretty; text-shadow: 0 2px 12px rgba(3,38,33,0.18);
+}
+.hero .lead {
+  font-size: 15px; line-height: 1.85; margin-top: 16px; opacity: 0.94;
+  text-wrap: pretty;
+}
+.hero .meta { font-size: 12.5px; opacity: 0.8; margin-top: 14px; }
+.hero-shot { margin-top: 30px; display: flex; justify-content: center; }
+.hero-shot .phone { margin-bottom: -22px; }
+
+/* ── 端末フレーム ── */
+.phone {
+  width: 244px;
+  border-radius: 34px;
+  padding: 7px;
+  background: #17302B;
+  box-shadow: 0 18px 44px rgba(6,44,38,0.28);
+  flex-shrink: 0;
+}
+.phone img { border-radius: 27px; }
+
+/* ── CTA ── */
+.cta-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  background: var(--cream); color: #0B6B61 !important;
+  font-weight: 700; font-size: 15.5px; text-decoration: none;
+  border-radius: 14px; padding: 15px 30px;
+  box-shadow: 0 6px 18px rgba(4,42,36,0.20);
+  transition: transform 0.15s ease;
+}
+.cta-btn:hover { transform: translateY(-2px); }
+.cta-btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+.cta-btn.solid {
+  background: var(--accent); color: var(--cream) !important;
+  box-shadow: 0 6px 18px rgba(14,148,132,0.30);
+}
+.cta-note { font-size: 12px; color: var(--ink-faint); margin-top: 10px; }
+.hero .cta-note { color: rgba(253,248,236,0.78); }
+
+/* ── セクション ── */
+section { padding: 52px 0; }
+.sec-label {
+  font-size: 11.5px; font-weight: 700; letter-spacing: 1.4px;
+  color: var(--accent); text-transform: uppercase;
+}
+h2 {
+  font-size: 23px; font-weight: 900; line-height: 1.55; margin-top: 8px;
+  text-wrap: pretty;
+}
+.sec-body { font-size: 15px; color: var(--ink-soft); margin-top: 14px; text-wrap: pretty; }
+
+/* ── 機能ブロック ── */
+.feature { display: flex; gap: 40px; align-items: center; margin-top: 44px; }
+.feature .phone { width: 208px; }
+.feature:first-of-type { margin-top: 34px; }
+.feature.flip { flex-direction: row-reverse; }
+.feature-text { flex: 1; }
+.feature-text h3 {
+  font-size: 19px; font-weight: 900; line-height: 1.6; text-wrap: pretty;
+}
+.feature-text p { font-size: 14.5px; color: var(--ink-soft); margin-top: 10px; text-wrap: pretty; }
+
+/* ── 「気づき」の引用ブロック ── */
+.quiet {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 26px 24px; margin-top: 26px;
+}
+.quiet h3 { font-size: 16.5px; font-weight: 700; }
+.quiet p { font-size: 14.5px; color: var(--ink-soft); margin-top: 8px; text-wrap: pretty; }
+
+/* ── 料金 ── */
+.plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 26px; }
+.plan {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 22px 20px;
+}
+.plan.premium { border-color: var(--accent); border-width: 1.5px; }
+.plan .plan-name { font-size: 13px; font-weight: 700; color: var(--accent-dark); }
+.plan .plan-price { font-size: 21px; font-weight: 900; margin-top: 4px; line-height: 1.4; }
+.plan .plan-price small { font-size: 12.5px; font-weight: 500; color: var(--ink-faint); }
+.plan ul { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.plan li {
+  font-size: 13.5px; color: var(--ink-soft); line-height: 1.65;
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.plan li svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 5px; }
+
+/* ── 最終CTA ── */
+.final {
+  background: linear-gradient(165deg, #21C4AD 0%, #14A594 50%, #0C8B7C 100%);
+  color: var(--cream); text-align: center; padding: 54px 20px;
+}
+.final h2 { font-size: 24px; text-shadow: 0 2px 12px rgba(3,38,33,0.18); }
+.final p { font-size: 14.5px; opacity: 0.94; margin-top: 14px; text-wrap: pretty; }
+.final .cta-btn { margin-top: 26px; }
+
+/* ── 注記・フッター ── */
+.disclaimer {
+  font-size: 12px; color: var(--ink-faint); line-height: 1.85;
+  border-top: 1px solid var(--line); padding-top: 22px; margin-top: 8px;
+  text-wrap: pretty;
+}
+footer {
+  border-top: 1px solid var(--line); padding: 24px 20px 40px;
+  text-align: center; font-size: 12.5px; color: var(--ink-faint);
+}
+footer .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; }
+footer a { text-decoration: none; }
+
+@media (max-width: 640px) {
+  .hero { padding-top: 36px; }
+  .hero h1 { font-size: 25px; margin-top: 22px; }
+  .hero .lead { font-size: 14.5px; }
+  h2 { font-size: 21px; }
+  section { padding: 44px 0; }
+  .feature, .feature.flip { flex-direction: column; gap: 24px; margin-top: 38px; }
+  .feature-text { text-align: center; }
+  .phone { width: 218px; }
+  .plans { grid-template-columns: minmax(0, 1fr); }
+  .cta-btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brandmark">
+      <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="1024" height="1024" rx="220" fill="#FDF8EC"/>
+        <g fill="#0E9484">
+          <path d="M 512 502 C 606 502 694 566 694 654 C 694 748 606 794 512 794 C 418 794 330 748 330 654 C 330 566 418 502 512 502 Z"/>
+          <ellipse cx="296" cy="438" rx="58" ry="84" transform="rotate(-24 296 438)"/>
+          <ellipse cx="438" cy="338" rx="60" ry="88" transform="rotate(-8 438 338)"/>
+          <ellipse cx="586" cy="338" rx="60" ry="88" transform="rotate(8 586 338)"/>
+          <ellipse cx="728" cy="438" rx="58" ry="84" transform="rotate(24 728 438)"/>
+        </g>
+        <path d="M 512 700 C 500 682 468 660 468 634 C 468 616 482 604 498 604 C 506 604 512 610 512 618 C 512 610 518 604 526 604 C 542 604 556 616 556 634 C 556 660 524 682 512 700 Z" fill="#FDF8EC"/>
+      </svg>
+      <div class="name">Wandary</div>
+    </div>
+
+    <h1>毎日のひと記録で<br>家族の「いつもと違う」に<br>気づける。</h1>
+    <p class="lead">I love ワンコの気持ちをカタチに。</p>
+
+    <div style="margin-top: 28px;">
+      <a class="cta-btn" href="https://apps.apple.com/jp/app/id6792701313">
+        <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        App Store で無料ダウンロード
+      </a>
+      <p class="cta-note">iPhone / iOS 17 以降 · アカウント登録は不要です</p>
+    </div>
+
+    <div class="hero-shot">
+      <div class="phone"><img src="img/home.jpg" alt="Wandary のホーム画面。ごはん・うんち・散歩など、その日の記録が一覧で並んでいる" width="640" height="1387"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="sec-label">Why Wandary</div>
+    <h2>犬は、言葉で「つらい」と<br>伝えられません。</h2>
+    <p class="sec-body">
+      だからこそ、毎日そばにいるあなたの小さな気づきが、この子の健康を守る最初のサインになります。
+      でも「食欲が落ちたのは、いつからだったっけ」——記憶だけで思い出すのは、かんたんではありません。
+    </p>
+    <p class="sec-body">
+      Wandary は、そのための記録アプリです。とりとめのない「きょう」を残しておくことが、
+      いつか「この子のいちばんの理解者」でいるための、いちばん近い道になります。
+    </p>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="sec-label">Features</div>
+    <h2>毎日つづく、3つの理由。</h2>
+
+    <div class="feature">
+      <div class="feature-text">
+        <h3>ひと記録、たったの3秒。</h3>
+        <p>
+          ごはん / うんち / おしっこ / 散歩 / ようす / お薬 / 病院 / ひとこと日記。
+          時刻は自動、あとはチップを選ぶだけ。忙しい朝でも、片手で終わります。
+        </p>
+      </div>
+      <div class="phone"><img src="img/record.jpg" alt="記録画面。ごはんの量や食べ具合を、チップを選ぶだけで記録できる" width="640" height="1387" loading="lazy"></div>
+    </div>
+
+    <div class="feature flip">
+      <div class="feature-text">
+        <h3>気になった日が、ひと目でわかる。</h3>
+        <p>
+          記録した日にはスタンプ、気になるようすがあった日にはしるしが付きます。
+          「先週から食欲がない気がする」を、カレンダーの上で確かめられます。
+        </p>
+      </div>
+      <div class="phone"><img src="img/calendar.jpg" alt="カレンダー画面。記録のある日と気になる様子があった日が色分けして表示されている" width="640" height="1387" loading="lazy"></div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <h3>「いつからですか？」に、迷わず答えられる。</h3>
+        <p>
+          見せたい期間を選ぶだけで、その間の記録が自動で「通院ノート」にまとまります。
+          画面を見せるだけで、毎日の観察が先生にまっすぐ伝わる。画像にして、家族にも共有できます。
+        </p>
+      </div>
+      <div class="phone"><img src="img/vet.jpg" alt="通院ノート画面。日付ごとの記録と天気・気圧が時系列でまとまっている" width="640" height="1387" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="sec-label">Philosophy</div>
+    <h2>「書けなかった日」を、<br>責めないアプリ。</h2>
+    <p class="sec-body">
+      記録がない日に「サボっていませんか」と急かすことはしません。
+      空欄の日があっても、ひとことだけの日があってもいい。ゆるく続けられることが、いちばん大切だから。
+    </p>
+
+    <div class="quiet">
+      <h3>そのかわり、忘れては困ることはお知らせします</h3>
+      <p>
+        お薬の時刻、フィラリア・ノミダニの毎月の予防、ワクチンの予定、次回の通院日。
+        日付が決まっている予定は、前日と当日にきちんとお届けします。
+      </p>
+    </div>
+
+    <div class="quiet">
+      <h3>続けた記録は、この子の“物語”になります</h3>
+      <p>
+        週間日記や月刊誌で、日々の記録が愛犬の視点のエッセイとしてよみがえります。
+        記録は義務ではなく——いつか宝物になる思い出です。
+      </p>
+    </div>
+
+    <div class="quiet">
+      <h3>大切な記録は、iCloud にずっと</h3>
+      <p>
+        アカウント登録は不要。記録はお使いの iCloud に自動で保管され、機種変更してもそのまま引き継がれます。
+        開発者があなたの記録を見ることはできません。
+      </p>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="sec-label">Price</div>
+    <h2>まずは、無料ではじめられます。</h2>
+
+    <div class="plans">
+      <div class="plan">
+        <div class="plan-name">無料プラン</div>
+        <div class="plan-price">0円</div>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#0E9484" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>毎日の記録（8カテゴリ・1頭）</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#0E9484" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>直近30日のふりかえり</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#0E9484" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>通院ノート・家族への共有</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#0E9484" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>お薬・予防接種のお知らせ</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#0E9484" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>iCloud 自動同期</li>
+        </ul>
+      </div>
+      <div class="plan premium">
+        <div class="plan-name">Wandary Premium</div>
+        <div class="plan-price">月額480円 <small>/ 年額4,800円</small></div>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#0E9484" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>過去の記録をすべてふりかえり</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#0E9484" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>複数頭の登録</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#0E9484" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>月刊誌のバックナンバー（過去1年）</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#0E9484" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>通院ノート・月刊誌の PDF 書き出し</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="final">
+  <h2>きょうのあの子を、<br>そっと残しませんか。</h2>
+  <p>なんでもないその毎日は、実は、かけがえのない時間の連続です。</p>
+  <a class="cta-btn" href="https://apps.apple.com/jp/app/id6792701313">
+    <svg viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+    App Store で無料ダウンロード
+  </a>
+  <p class="cta-note">iPhone / iOS 17 以降 · アカウント登録は不要です</p>
+</div>
+
+<div class="wrap">
+  <p class="disclaimer">
+    ※本アプリはペットの健康状態の記録を支援するものであり、獣医療行為や医学的な助言・診断を提供するものではありません。体調に異変を感じた場合は、必ず獣医師にご相談ください。<br>
+    ※Premium のお支払いは Apple ID に請求され、期間終了の24時間前までに解約しない限り自動更新されます。解約は App Store のアカウント設定からいつでも可能です。
+  </p>
+</div>
+
+<footer>
+  <div class="links">
+    <a href="index.html">サポート・よくあるご質問</a>
+    <a href="terms.html">利用規約</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <a href="tokushoho.html">特定商取引法に基づく表記</a>
+  </div>
+  <p style="margin-top:10px;">© 2026 Wandary</p>
+</footer>
+
+</body>
+</html>
