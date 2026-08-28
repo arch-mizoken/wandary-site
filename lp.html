@@ -108,6 +108,16 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .cta-note { font-size: 12px; color: var(--ink-faint); margin-top: 10px; }
 .hero .cta-note { color: rgba(253,248,236,0.78); }
+/* Instagram など、アプリ内ブラウザで開かれたときだけ出す案内。
+   Meta のアプリ内ブラウザは App Store への遷移を遮断するため、
+   Safari で開き直す方法をその場で伝える */
+.iab-hint {
+  font-size: 12.5px; line-height: 1.75; color: var(--cream);
+  background: rgba(4,42,36,0.22); border: 1px solid rgba(253,248,236,0.30);
+  border-radius: 12px; padding: 10px 14px; margin: 12px auto 0; max-width: 340px;
+  text-wrap: pretty;
+}
+.iab-hint strong { color: var(--cream); font-weight: 700; }
 
 /* ── セクション ── */
 section { padding: 52px 0; }
@@ -221,6 +231,7 @@ footer a { text-decoration: none; }
         App Store で無料ダウンロード
       </a>
       <p class="cta-note">iPhone / iOS 17 以降 · アカウント登録は不要です</p>
+      <p class="iab-hint" hidden>App Store が開かないときは、右上の <strong>…</strong> から「<strong>ブラウザで開く</strong>」を選んでください。</p>
     </div>
 
     <div class="hero-shot">
@@ -354,6 +365,7 @@ footer a { text-decoration: none; }
     App Store で無料ダウンロード
   </a>
   <p class="cta-note">iPhone / iOS 17 以降 · アカウント登録は不要です</p>
+  <p class="iab-hint" hidden>App Store が開かないときは、右上の <strong>…</strong> から「<strong>ブラウザで開く</strong>」を選んでください。</p>
 </div>
 
 <div class="wrap">
@@ -372,6 +384,37 @@ footer a { text-decoration: none; }
   </div>
   <p style="margin-top:10px;">© 2026 Wandary</p>
 </footer>
+
+<script>
+// Instagram・Facebook・LINE・X のアプリ内ブラウザ (iOS の WKWebView) は、
+// App Store への遷移をアプリ側で遮断するため、通常のリンクではタップしても
+// 何も起きない。そこで
+//   1. App Store アプリを直接呼び出す itms-apps:// を試し
+//   2. あわせて「ブラウザで開く」の案内をその場に出す
+// という二段構えにする。通常のブラウザ (Safari 等) では一切手を加えない。
+(function () {
+  var APP_ID = '6792701313';
+  var ua = navigator.userAgent || '';
+  var inApp = /Instagram|FBAN|FBAV|FB_IAB|Line\/|Twitter/i.test(ua);
+  if (!inApp) return;
+
+  var hints = document.querySelectorAll('.iab-hint');
+  for (var h = 0; h < hints.length; h++) hints[h].hidden = false;
+
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  if (!isIOS) return;
+
+  var buttons = document.querySelectorAll('a.cta-btn');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function (e) {
+      // ユーザー操作に紐づいたその場での遷移でないと弾かれるため、
+      // setTimeout などを挟まずに直接呼ぶ
+      e.preventDefault();
+      window.location.href = 'itms-apps://apps.apple.com/jp/app/id' + APP_ID;
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
