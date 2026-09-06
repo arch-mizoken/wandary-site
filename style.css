@@ -76,3 +76,31 @@ a { color: var(--accent-dark); }
   font-weight: 700;
   margin-top: 10px;
 }
+
+/* ── 編集部の道具箱 (goods/) ── */
+.pick-list { list-style: none; padding: 0; margin: 18px 0 0; }
+.pick-item {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+}
+.pick-item a { text-decoration: none; font-weight: 700; font-size: 15.5px; }
+.pick-item .emoji { font-size: 20px; margin-right: 6px; }
+.pick-item p { font-size: 13.5px; margin-top: 4px; }
+.pick-cat {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  color: var(--accent-dark); background: #EFF7F5;
+  border-radius: 999px; padding: 2px 10px; margin-bottom: 6px;
+}
+.byline { color: var(--ink-faint); font-size: 12.5px; margin-top: 26px; }
+/* ステマ規制 (景表法) — リンクと同じ画面に必ず出す */
+.ad-note {
+  background: #FBF6EC; border: 1px solid #EADCC4; color: #6B5A3C;
+  border-radius: 10px; padding: 10px 14px; font-size: 12.5px; margin: 18px 0;
+}
+.med-note { color: var(--ink-faint); font-size: 12px; margin-top: 20px; }
+.pick-note { background: #F2F7F6; border-left: 3px solid var(--accent); padding: 12px 16px; border-radius: 0 10px 10px 0; margin: 18px 0; }
+.pick-note strong { display: block; margin-bottom: 4px; color: var(--accent-dark); font-size: 13.5px; }
+.pick-note p { font-size: 13.5px; }
