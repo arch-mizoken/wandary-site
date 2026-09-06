@@ -209,3 +209,10 @@ p.article-lead { font-size: 15.5px; font-weight: 500; line-height: 1.9; color: v
 .app-cta-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 4px; }
 .app-cta-actions .btn { margin-top: 0; }
 .app-cta-actions .note { font-size: 13px; color: var(--ink-faint); }
+
+/* つぎに読む — 記事どうしの回遊 */
+.related { margin: 34px 0 0; }
+.related-label { font-size: 11px; font-weight: 700; letter-spacing: 2.4px; color: var(--ink-faint); margin-bottom: 4px; }
+.related .pick-list { margin-top: 10px; }
+.related .pick-item { background: var(--card); border-color: var(--line); }
+.related .pick-item a { font-size: 15px; }
