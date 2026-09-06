@@ -104,3 +104,21 @@ a { color: var(--accent-dark); }
 .pick-note { background: #F2F7F6; border-left: 3px solid var(--accent); padding: 12px 16px; border-radius: 0 10px 10px 0; margin: 18px 0; }
 .pick-note strong { display: block; margin-bottom: 4px; color: var(--accent-dark); font-size: 13.5px; }
 .pick-note p { font-size: 13.5px; }
+
+/* ストアごとの購入ボタン。1社だけだと、その店にログインしていない読み手が
+   離脱して自分で検索し直すため、入っているものを並べて選べるようにする */
+.shop-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 4px; }
+.shop-btn {
+  margin-top: 0;
+  padding: 12px 22px;
+  font-size: 14px;
+  flex: 1 1 auto;
+  text-align: center;
+  min-width: 140px;
+}
+.shop-amazon  { background: #E88A1A; }
+.shop-rakuten { background: #C0392B; }
+.shop-yahoo   { background: #7A5AA8; }
+@media (max-width: 480px) {
+  .shop-btn { flex: 1 1 100%; }
+}
