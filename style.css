@@ -19,6 +19,7 @@
   --ink-faint:   #9AA5B1;  /* Ink.faint */
   --line:        #E4E8EE;  /* Line.standard */
   --line-2:      #EEF1F5;  /* Line.subtle */
+  --brand-ink:   #0B6B61;  /* ロゴタイプの色。ロゴの一部なので他には使わない */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -41,17 +42,22 @@ header .bar {
   height: 60px; display: flex; align-items: center;
   justify-content: space-between; gap: 16px;
 }
-.brand { display: flex; align-items: center; gap: 9px; text-decoration: none; color: var(--ink); }
-.brand img { width: 26px; height: 26px; display: block; }
-.brand span { font-size: 17px; font-weight: 700; letter-spacing: 0.5px; }
+/* ヘッダーのロゴ = App Store アイコンと同じ肉球マーク + ロゴタイプ。
+   ストアからサイトに来た人が同じものだと分かるように、マークは icon と揃える */
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand img { width: 28px; height: 28px; display: block; border-radius: 7px; }
+.brand span {
+  font-size: 18px; font-weight: 900; letter-spacing: 0.5px;
+  color: var(--brand-ink); line-height: 1;
+}
 .site-nav { display: flex; align-items: center; gap: 22px; font-size: 13px; font-weight: 500; }
 .site-nav a { color: var(--ink-soft); text-decoration: none; }
 .site-nav a:hover { color: var(--accent-dark); }
 @media (max-width: 420px) {
   header .bar { height: 54px; }
   .site-nav { gap: 15px; font-size: 12.5px; }
-  .brand span { font-size: 15.5px; }
-  .brand img { width: 23px; height: 23px; }
+  .brand span { font-size: 16.5px; }
+  .brand img { width: 25px; height: 25px; border-radius: 6px; }
 }
 
 main { max-width: 720px; margin: 0 auto; padding: 36px 20px 56px; }
@@ -115,13 +121,21 @@ tr:last-child th, tr:last-child td { border-bottom: none; }
   font-weight: 700; margin-top: 10px;
 }
 
-footer { border-top: 1px solid var(--line); margin-top: 8px; }
+footer { border-top: 1px solid var(--line); margin-top: 8px; background: var(--card); }
+/* リンクが5本あると横並びは必ず折り返すので、最初から縦に積む。
+   幅によって並びが変わらないぶん、どの画面でも同じ見え方になる */
 footer .bar {
-  max-width: 720px; margin: 0 auto; padding: 24px 20px 44px;
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 12px; font-size: 12.5px; color: var(--ink-faint);
+  max-width: 720px; margin: 0 auto; padding: 30px 20px 44px;
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: 20px; font-size: 12.5px; color: var(--ink-faint);
 }
+/* チワワはアプリのキャラクターマーク。ブランドマーク (肉球) と役割を分け、
+   「書き手」が見える場所 — フッターと記事の署名 — に置く */
+.sign { display: flex; align-items: center; gap: 11px; }
+.sign img { width: 34px; height: 34px; display: block; flex-shrink: 0; }
+.sign span { font-size: 12.5px; line-height: 1.8; color: var(--ink-soft); }
 footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
+
 footer a { color: var(--ink-soft); text-decoration: none; }
 footer a:hover { color: var(--accent-dark); }
 
