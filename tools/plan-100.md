@@ -19,7 +19,7 @@ LP もサポートページも巻き添えになる。書きためて **週3〜5
 
 ## 進捗
 
-**書き終わり 37本 / 110本。** 表の ✅ が書き終わったもの。
+**書き終わり 47本 / 121本。** 表の ✅ が書き終わったもの。
 
 日付が未来のあいだは公開されない。`.github/workflows/publish.yml` が毎日
 00:10 JST に走り、その日が来たものだけを出す。
@@ -45,6 +45,7 @@ python3 tools/build_articles.py && python3 tools/sitemap.py
 | こいぬ | 12 | 不安が最大の時期。検索量も多い |
 | てつづき | 10 | 意図が明確で競合が薄い。最も取りやすい |
 | たとうがい | 6 | 競合ほぼ無し。Premium に直結 |
+| きせつ | 15 | 出す月が決まっている。**前の月までに書き終える必要がある** |
 | おわかれ | 6 | 検索は少ないがブランドになる |
 
 ---
@@ -106,11 +107,8 @@ python3 tools/build_articles.py && python3 tools/sitemap.py
 |---|---|---|
 | ✅ walk-ground-temp | 夏の散歩は、時間ではなく地面の温度で決める | 犬 散歩 夏 時間 |
 | ✅ home-alone-hours | 留守番は何時間までか、という問いの答え方 | 犬 留守番 何時間 |
-| winter-walk | 冬の散歩で、実際に困ったこと | 犬 散歩 冬 |
-| typhoon-and-pressure | 気圧が下がる日に、調子を崩す子がいる | 犬 気圧 体調 |
 | car-sickness | 車に乗せる前にやっておくこと | 犬 車酔い |
 | travel-with-dog | 犬と泊まるとき、持ち物より先に決めること | 犬 旅行 準備 |
-| disaster-kit | 防災バッグに、犬のぶんで入れているもの | 犬 防災 |
 | summer-indoor | 留守番中のエアコンを、何度にしているか | 犬 エアコン 温度 |
 | walk-length | 散歩の長さは、犬種ではなくその子で決める | 犬 散歩 時間 |
 | walk-refuse | 散歩に行きたがらない日があるとき | 犬 散歩 行かない |
@@ -119,7 +117,31 @@ python3 tools/build_articles.py && python3 tools/sitemap.py
 | bath-frequency | シャンプーの頻度を決めた理由 | 犬 シャンプー 頻度 |
 | new-family-member | 赤ちゃんが来る前に、半年かけてやったこと | 犬 赤ちゃん 準備 |
 | moving-house | 引っ越しで、いちばん堪えるのは犬のほう | 犬 引っ越し ストレス |
-| hot-spring-season | 季節の変わり目に、記録が効く理由 | 犬 季節の変わり目 |
+
+### きせつ
+出す月が決まっているので、**前の月までに書き終えておく**。書きだめが要る唯一のクラスタ。
+
+| slug | タイトル | 出す月 |
+|---|---|---|
+| ✅ winter-walk | 冬の散歩で、実際に困ること | 11月 |
+| ✅ cold-protection | 寒さ対策は、犬種と年齢で必要度がまったく違う | 11月 |
+| ✅ heater-burns | 暖房器具で、いちばん多い事故 | 11月 |
+| ✅ dry-air | 冬の乾燥は、肉球と皮膚に出る | 11月 |
+| ✅ disaster-kit | 防災バッグに、犬のぶんで入れているもの | 11月 |
+| ✅ year-end-clinic | 年末年始、病院が閉まる前にやっておくこと | 12月 |
+| ✅ new-year-food | 年末年始に増える、誤食と拾い食い | 12月 |
+| ✅ low-pressure | 気圧が下がる日に、調子を崩す子がいる | 1月 |
+| ✅ winter-weight | 冬に増えた体重は、春に気づく | 2月 |
+| ✅ spring-prep | 春の予防シーズンが始まる前に、やっておくこと | 2月 |
+| summer-indoor | 留守番中のエアコンを、何度にしているか | 5月 |
+| summer-fatigue | 夏バテと、そうでないものを分ける | 6月 |
+| rainy-season-skin | 梅雨は、皮膚と耳に出る | 6月 |
+| fireworks-thunder | 花火と雷の日に、できること | 7月 |
+| autumn-shedding | 換毛期の抜け毛と、皮膚の見分け | 9月 |
+
+※ hot-spring-season は きづく の seasonal-baseline と重なるため取りやめ。
+※ typhoon-and-pressure は low-pressure に改名（冬の低気圧も扱うため）。
+
 
 ### ごはん
 | slug | タイトル | 狙い |
