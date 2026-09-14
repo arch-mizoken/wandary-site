@@ -19,7 +19,7 @@ LP もサポートページも巻き添えになる。書きためて **週3〜5
 
 ## 進捗
 
-**書き終わり 57本 / 121本。** 表の ✅ が書き終わったもの。
+**書き終わり 68本 / 121本。** 表の ✅ が書き終わったもの。
 
 日付が未来のあいだは公開されない。`.github/workflows/publish.yml` が毎日
 00:10 JST に走り、その日が来たものだけを出す。
@@ -72,17 +72,17 @@ python3 tools/build_articles.py && python3 tools/sitemap.py
 | slug | タイトル | 狙い |
 |---|---|---|
 | ✅ vomit-what-to-tell | 吐いたとき、獣医師に伝えるべきこと | 犬 吐く 病院 |
-| first-visit-checklist | はじめての動物病院に持っていくもの | 動物病院 初診 持ち物 |
-| choose-clinic | かかりつけを決めるときに見ているところ | 動物病院 選び方 |
-| emergency-or-morning | 夜間に迷ったとき、朝まで待てるかの考え方 | 犬 夜間 病院 |
-| cost-expectation | 診察費は、何にいくらかかっているのか | 犬 診察 費用 |
-| second-opinion | セカンドオピニオンを、angry にならずに頼む | 犬 セカンドオピニオン |
-| medicine-refuse | 薬を飲んでくれないときに試したこと | 犬 薬 飲まない |
-| after-visit-notes | 診察のあと、車の中で書いておくこと | 動物病院 メモ |
-| pet-insurance-basics | 保険に入るかどうかを、何で決めたか | ペット保険 必要 |
-| vet-english-words | 診察で出てくる言葉を、先に知っておく | 犬 検査 種類 |
-| regular-checkup | 健康診断は、何歳から何を受けるか | 犬 健康診断 頻度 |
-| hospital-stress | 病院を嫌がる子と、どう通うか | 犬 病院 嫌がる |
+| ✅ first-visit-checklist | はじめての動物病院に持っていくもの | 動物病院 初診 持ち物 |
+| ✅ choose-clinic | かかりつけを決めるときに見ているところ | 動物病院 選び方 |
+| ✅ emergency-or-morning | 夜間に迷ったとき、朝まで待てるかの考え方 | 犬 夜間 病院 |
+| ✅ cost-expectation | 診察費は、何にいくらかかっているのか | 犬 診察 費用 |
+| ✅ second-opinion | セカンドオピニオンを、気まずくならずに頼む | 犬 セカンドオピニオン |
+| ✅ medicine-refuse | 薬を飲んでくれないときに試したこと | 犬 薬 飲まない |
+| ✅ after-visit-notes | 診察のあと、車の中で書いておくこと | 動物病院 メモ |
+| ✅ anesthesia | 麻酔が心配なとき、確認しておくこと | 犬 麻酔 リスク |
+| ✅ vet-words | 診察で出てくる言葉を、先に知っておく | 犬 検査 種類 |
+| ✅ regular-checkup | 健康診断は、何歳から何を受けるか | 犬 健康診断 頻度 |
+| ✅ hospital-stress | 病院を嫌がる子と、どう通うか | 犬 病院 嫌がる |
 
 ### きづく
 | slug | タイトル | 狙い |
