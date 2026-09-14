@@ -51,11 +51,12 @@ header .bar {
   color: var(--brand-ink); line-height: 1;
 }
 .site-nav { display: flex; align-items: center; gap: 22px; font-size: 13px; font-weight: 500; }
-.site-nav a { color: var(--ink-soft); text-decoration: none; }
+/* 「アプリについて」を足したら、狭い幅で語の途中で折れた */
+.site-nav a { color: var(--ink-soft); text-decoration: none; white-space: nowrap; }
 .site-nav a:hover { color: var(--accent-dark); }
 @media (max-width: 420px) {
   header .bar { height: 54px; }
-  .site-nav { gap: 15px; font-size: 12.5px; }
+  .site-nav { gap: 12px; font-size: 12px; }
   .brand span { font-size: 16.5px; }
   .brand img { width: 25px; height: 25px; border-radius: 6px; }
 }
