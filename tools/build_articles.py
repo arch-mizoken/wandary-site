@@ -8,7 +8,7 @@
 持つと、ナビを足したときに記事側だけ古くなるため。
 
 本文の記法は既存記事が使っているものだけ:
-    ## 見出し      → <h2>
+    ## 見出し      → <h2>  (### は <h3>)
     - 箇条書き     → <ul><li>
     **強調**       → <strong>
     [文字](URL)    → <a>
@@ -65,6 +65,24 @@ def inline(t):
     return t
 
 
+def table(block):
+    """| a | b |  の3行以上を <table> にする。2行目の |---| は捨てる"""
+    rows = [r.strip().strip("|").split("|") for r in block.splitlines()]
+    head, body = rows[0], rows[2:]
+    th = "".join(f"<th>{inline(c.strip())}</th>" for c in head)
+    trs = "\n".join(
+        "    <tr>" + "".join(f"<td>{inline(c.strip())}</td>" for c in r) + "</tr>"
+        for r in body)
+    return f'  <table>\n    <tr>{th}</tr>\n{trs}\n  </table>'
+
+
+def quote(block):
+    """> で始まる塊。書きかけの【要記入】もここに入る"""
+    lines = [l.lstrip(">").strip() for l in block.splitlines()]
+    ps = "\n".join(f"    <p>{inline(l)}</p>" for l in lines if l)
+    return f'  <div class="card">\n{ps}\n  </div>'
+
+
 def render_body(md):
     out, bullets = [], []
 
@@ -78,9 +96,18 @@ def render_body(md):
         block = block.strip()
         if not block:
             continue
-        if block.startswith("## "):
+        if block.startswith("### "):
+            flush()
+            out.append(f"  <h3>{inline(block[4:].strip())}</h3>")
+        elif block.startswith("## "):
             flush()
             out.append(f"  <h2>{inline(block[3:].strip())}</h2>")
+        elif block.startswith("|") and block.count("\n") >= 2:
+            flush()
+            out.append(table(block))
+        elif block.startswith(">"):
+            flush()
+            out.append(quote(block))
         elif block.startswith("- "):
             for line in block.splitlines():
                 bullets.append(line[2:].strip())
