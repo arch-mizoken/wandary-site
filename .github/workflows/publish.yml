@@ -1,0 +1,38 @@
+# 予約した記事を、その日が来たら自動で公開する。
+# _articles/*.md の date が未来のあいだ、build_articles.py はその記事を出さない。
+name: Publish scheduled articles
+
+on:
+  schedule:
+    - cron: "10 15 * * *"   # 毎日 00:10 JST (UTC 15:10)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 記事とサイトマップを作り直す
+        run: |
+          python3 tools/build_articles.py
+          python3 tools/sitemap.py
+        env:
+          TZ: Asia/Tokyo
+
+      - name: 変わっていたらコミットする
+        run: |
+          if git diff --quiet; then
+            echo "公開待ちの記事はありません"
+            exit 0
+          fi
+          git config user.name  "wandary-bot"
+          git config user.email "noreply@wandary.jp"
+          git add knowledge sitemap.xml
+          git commit -m "予約していた記事を公開する"
+          git push
