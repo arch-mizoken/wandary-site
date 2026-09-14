@@ -19,7 +19,7 @@ LP もサポートページも巻き添えになる。書きためて **週3〜5
 
 ## 進捗
 
-**書き終わり 79本 / 121本。** 表の ✅ が書き終わったもの。
+**書き終わり 90本 / 121本。** 表の ✅ が書き終わったもの。
 
 日付が未来のあいだは公開されない。`.github/workflows/publish.yml` が毎日
 00:10 JST に走り、その日が来たものだけを出す。
@@ -177,17 +177,17 @@ python3 tools/build_articles.py && python3 tools/sitemap.py
 | slug | タイトル | 狙い |
 |---|---|---|
 | ✅ puppy-first-week | 迎えて最初の1週間で、やることとやらないこと | 子犬 迎えた 初日 |
-| puppy-toilet | トイレは、失敗の記録をつけると早く終わる | 子犬 トイレ しつけ |
-| puppy-night-crying | 夜鳴きに、どう付き合ったか | 子犬 夜鳴き |
-| puppy-food-times | 回数を減らすタイミングの決め方 | 子犬 ごはん 回数 |
-| puppy-socialization | 社会化の期間は、思っているより短い | 子犬 社会化 |
-| puppy-biting | 甘噛みに、効いたことと効かなかったこと | 子犬 甘噛み |
-| puppy-walk-start | 散歩デビューは、いつからか | 子犬 散歩 いつから |
-| puppy-vaccine | ワクチンが終わるまでの外出 | 子犬 ワクチン 散歩 |
-| puppy-crate | ハウスを、嫌な場所にしないために | 子犬 クレート |
-| puppy-weight-curve | 体重の増え方を、グラフで見ておく | 子犬 体重 増え方 |
-| puppy-first-vet | 最初の通院で聞いておくとよかったこと | 子犬 病院 いつ |
-| puppy-alone-training | 留守番の練習は、短い時間から | 子犬 留守番 練習 |
+| ✅ puppy-toilet | トイレは、失敗の記録をつけると早く終わる | 子犬 トイレ しつけ |
+| ✅ puppy-night-crying | 夜鳴きに、どう付き合ったか | 子犬 夜鳴き |
+| ✅ puppy-food-times | 回数を減らすタイミングの決め方 | 子犬 ごはん 回数 |
+| ✅ puppy-socialization | 社会化の期間は、思っているより短い | 子犬 社会化 |
+| ✅ puppy-biting | 甘噛みに、効いたことと効かなかったこと | 子犬 甘噛み |
+| ✅ puppy-walk-start | 散歩デビューの、最初の1か月 | 子犬 散歩 いつから |
+| ✅ puppy-vaccine | ワクチンが終わるまでの、外の世界 | 子犬 ワクチン 散歩 |
+| ✅ puppy-crate | ハウスを、嫌な場所にしないために | 子犬 クレート |
+| ✅ puppy-weight-curve | 体重の増え方を、グラフで見ておく | 子犬 体重 増え方 |
+| ✅ puppy-first-vet | 最初の通院で聞いておくとよかったこと | 子犬 病院 いつ |
+| ✅ puppy-alone-training | 留守番の練習は、短い時間から | 子犬 留守番 練習 |
 
 ### てつづき
 | slug | タイトル | 狙い |
