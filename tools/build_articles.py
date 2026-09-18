@@ -175,6 +175,207 @@ def jsonld(meta):
     return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False) + "</script>"
 
 
+# ── まとめページ (ハブ) ──
+#
+# 記事を100本並べても、1本読んで帰られたら1本ぶんの価値しかない。
+# クラスタごとの入口を作って、そこに内部リンクを集める。
+#
+# ハブは一覧だけだと中身が薄く、検索にも拾われない。導入の文章が本体で、
+# 一覧はそのあと。ここは手で書くこと (記事から自動生成しない)。
+HUBS = [
+    {
+        "slug": "paperwork", "cats": ["てつづき"],
+        "title": "犬の登録・届出・お金のこと",
+        "lead": "飼い始めたときから、亡くなるときまで。法律で決まっている手続きと、実際にかかるお金をまとめています。",
+        "intro": [
+            "犬を迎えると、法律で決まっている手続きがいくつかあります。生後91日を過ぎたら市区町村への登録、毎年の狂犬病予防注射、マイクロチップの情報登録。",
+            "どれも一生に一度か、年に一度きりです。**誰も教えてくれないのに、やっていないと罰則がある**という種類のものばかりで、気づいたときには期限を過ぎていることがあります。引っ越したとき、飼い主が変わったとき、亡くなったときにも届け出が要ります。",
+            "ここでは「いつ・どこで・いくら」で書いています。ただし窓口も手数料も自治体ごとに違うので、最後はかならずお住まいの市区町村にご確認ください。",
+        ],
+    },
+    {
+        "slug": "signs", "cats": ["きづく"],
+        "title": "「いつもと違う」に気づくために",
+        "lead": "犬は言葉で伝えられません。そばにいる人が最初のサインに気づくための、見るべき場所と残し方。",
+        "intro": [
+            "犬は「つらい」と言えません。だから、毎日そばにいる人の小さな気づきが、いちばん早いサインになります。",
+            "ただ、気づくには「いつも」を知っている必要があります。そしてここが難しいところで、**毎日会っている家族ほど、少しずつの変化には気づけません**。半年前の写真を見て、はじめて痩せたと分かる。そういうことが実際に起きます。",
+            "比べられる形で残しておくこと。体重、水を飲む量、寝ているときの呼吸数。どれも1分もかからないのに、あとから効いてきます。",
+        ],
+    },
+    {
+        "slug": "vet", "cats": ["びょういん", "けんこう"],
+        "title": "動物病院とのつきあい方",
+        "lead": "診察は5分から10分。その短い時間で伝えきるために、家での様子をどう持っていくか。",
+        "intro": [
+            "診察室に入った瞬間、頭が真っ白になったことはありませんか。",
+            "家では気になっていたのに、先生を前にすると「なんとなく元気がなくて……」としか出てこない。そして帰り道に、聞きたかったことを思い出す。**これは記憶力の問題ではなく、その場で思い出す形になっていないだけ**です。",
+            "獣医師が知りたいのは、飼い主の解釈ではなく、その手前の事実であることが多い。いつから、どのくらい、ほかに何が起きていたか。ここでは、聞かれることと、こちらから聞いておくことをまとめています。",
+        ],
+    },
+    {
+        "slug": "records", "cats": ["きろく", "たとうがい"],
+        "title": "犬の記録の残し方",
+        "lead": "毎日つけることより、続くことのほうが大事です。何を残すと、あとから効くのか。",
+        "intro": [
+            "記録は、つけはじめるより続けるほうが難しい。三日坊主で終わったノートが、家に何冊かある方も多いと思います。",
+            "20年つけてきて、結局いちばん役に立ったのは**「何もなかった日」の記録**でした。異常があった日だけを書いていると、それが異常なのかどうかを判断する基準が手元に無い。ふつうの日が並んでいてはじめて、違う日が違って見えます。",
+            "だから、空欄の日があっていい。ひとことだけの日があっていい。ここでは、どこまで書けば十分なのかを書いています。",
+        ],
+    },
+    {
+        "slug": "senior", "cats": ["シニア"],
+        "title": "シニア犬と暮らす",
+        "lead": "小型犬なら7歳ごろから。その日を境に何かが変わるわけではありませんが、見る場所は変わります。",
+        "intro": [
+            "小型犬なら7歳、大型犬なら5〜6歳あたりから「シニア」と呼ばれます。ただ、誕生日を境に何かが変わるわけではありません。",
+            "変わるのは、**同じことが少しずつできなくなっていく速さ**です。散歩から帰る時間が少し早くなる。段差の前で一瞬止まる。呼んでも振り向かないことが増える。ひとつずつは「歳だから」で流せてしまうものばかりで、だからこそ記録が効きます。",
+            "ここでは、この時期に見ておくことと、もっと早くやっておけばよかったと思ったことを書いています。",
+        ],
+    },
+    {
+        "slug": "puppy", "cats": ["こいぬ"],
+        "title": "子犬を迎えた最初の半年",
+        "lead": "期限のある予定が、短い間に集まっています。何を、いつまでに。",
+        "intro": [
+            "最初の半年は、期限のある予定が集中します。ワクチンの2回目・3回目、市区町村への登録、フィラリアの開始、避妊去勢の検討。",
+            "同時に、いちばん不安な時期でもあります。食べない、下痢をする、夜鳴きする。**そのほとんどは様子を見ていい一方で、子犬は悪くなるのが早い**ので、どこからが病院なのかの線引きが要ります。",
+            "ここでは、この時期に実際に起きることと、その線引きを書いています。",
+        ],
+    },
+    {
+        "slug": "living", "cats": ["くらし", "ごはん"],
+        "title": "犬との暮らしで、つまずくところ",
+        "lead": "留守番、引っ越し、車、来客、赤ちゃん。そのつど調べ直すことになりがちな話。",
+        "intro": [
+            "犬と暮らしていると、想定していなかった場面が次々に出てきます。留守番は何時間までか。引っ越しで何を先にやるか。車に酔う子をどうするか。",
+            "どれも「そのとき」に調べることになって、**慌てて調べた情報はたいてい間に合いません**。引っ越しも赤ちゃんも、準備に数か月かかるものだからです。",
+            "ここでは、先に知っておくと楽になる話をまとめています。",
+        ],
+    },
+    {
+        "slug": "seasons", "cats": ["きせつ"],
+        "title": "季節ごとに、気をつけること",
+        "lead": "毎年同じことが起きるのに、毎年忘れます。前もって備えておくこと。",
+        "intro": [
+            "犬の1年は、人の1年より濃いです。夏の暑さ、冬の乾燥、春の予防シーズン。体が小さいぶん、外の環境がそのまま体にきます。",
+            "やっかいなのは、**毎年同じことが起きるのに、毎年忘れる**ことです。去年どうしたかは、たいてい覚えていません。フィラリアをいつ始めていつ終えたか、去年の夏に何時に散歩していたか。",
+            "ここでは、季節ごとに前もってやっておくことを書いています。時期は地域で大きく変わるので、目安として読んでください。",
+        ],
+    },
+]
+
+
+def hub_jsonld(hub, metas):
+    d = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": hub["title"],
+        "description": hub["lead"],
+        "url": f'{BASE}/knowledge/{hub["slug"]}.html',
+        "inLanguage": "ja",
+        "isPartOf": {"@type": "WebSite", "name": "Wandary", "url": BASE},
+        "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": len(metas),
+            "itemListElement": [
+                {"@type": "ListItem", "position": i + 1,
+                 "url": f'{BASE}/knowledge/{m["slug"]}.html', "name": m["title"]}
+                for i, m in enumerate(metas)
+            ],
+        },
+    }
+    return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False) + "</script>"
+
+
+# まとめページを出す下限。1〜2本しか無いハブは中身が薄く、
+# 検索にも拾われないうえ、読んだ人にも空振りになる
+HUB_MIN = 3
+
+
+def build_hubs(all_metas, head, foot):
+    """クラスタごとのまとめページ。記事が HUB_MIN 本たまってから出す"""
+    # 先に「どれを出すか」を決める。決まる前に書くと、
+    # 「ほかのまとめ」がまだ無いページを指してしまう (404になる)
+    made = [(h, [m for m in all_metas if m["cat"] in h["cats"]]) for h in HUBS]
+    made = [(h, ms) for h, ms in made if len(ms) >= HUB_MIN]
+
+    for hub, metas in made:
+        intro = "\n  ".join(f"<p>{inline(t)}</p>" for t in hub["intro"])
+        items = "\n".join(
+            f'    <li class="pick-item">\n'
+            f'      <a href="{m["slug"]}.html">{html.escape(m["title"])}</a>\n'
+            f'      <p>{html.escape(m["lead"])}</p>\n'
+            f'    </li>'
+            for m in metas
+        )
+        others = "\n".join(
+            f'      <li><a href="{h["slug"]}.html">{html.escape(h["title"])}</a></li>'
+            for h, _ in made if h["slug"] != hub["slug"]
+        )
+        page = f'''<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(hub["title"])} | Wandary</title>
+<meta name="description" content="{html.escape(hub["lead"], quote=True)}">
+<link rel="canonical" href="{BASE}/knowledge/{hub["slug"]}.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{html.escape(hub["title"], quote=True)}">
+<meta property="og:description" content="{html.escape(hub["lead"], quote=True)}">
+<meta property="og:url" content="{BASE}/knowledge/{hub["slug"]}.html">
+<meta property="og:image" content="{BASE}/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+{hub_jsonld(hub, metas)}
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+{head}
+<main class="article">
+  <div class="sheet">
+  <p class="article-date"><a href="./">よみもの</a></p>
+  <h1 class="page-title">{html.escape(hub["title"])}</h1>
+  <p class="article-lead">{inline(hub["lead"])}</p>
+
+  {intro}
+
+  <h2>この{len(metas)}本</h2>
+  <ul class="pick-list">
+{items}
+  </ul>
+
+  {MED_NOTE}
+
+  {AUTHOR}
+  </div>
+
+  <div class="related">
+    <p class="related-label">ほかのまとめ</p>
+    <ul class="pick-list">
+{others}
+    </ul>
+  </div>
+
+  <div class="app-cta">
+    <span class="app-cta-label">Wandary</span>
+    <span class="app-cta-title">気づいたことを、その場で残しておく</span>
+    <p>ごはん・うんち・散歩・お薬・気になる様子をワンタップで残せる iOS アプリです。記録は自動で「経過ノート」にまとまり、動物病院でそのまま見せられます。</p>
+    <div class="app-cta-actions">
+      <a class="btn" href="{APP_URL}">App Store で見る</a>
+      <span class="note">無料 · iPhone</span>
+    </div>
+  </div>
+</main>
+{foot}
+</body>
+</html>
+'''
+        (OUT / f'{hub["slug"]}.html').write_text(page)
+    return [(h, len(ms)) for h, ms in made]
+
+
 def build():
     head, foot = chrome()
     today = datetime.date.today().isoformat()
@@ -238,6 +439,15 @@ def build():
         f'    </li>'
         for m in metas
     )
+    hubs_made = build_hubs(metas, head, foot)
+    hublinks = "\n".join(
+        f'    <li class="pick-item">\n'
+        f'      <a href="{h["slug"]}.html">{html.escape(h["title"])}</a>\n'
+        f'      <p>{html.escape(h["lead"])} ({n}本)</p>\n'
+        f'    </li>'
+        for h, n in hubs_made
+    )
+
     idx = f'''<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -262,6 +472,13 @@ def build():
   <h1 class="page-title">よみもの</h1>
   <p>犬と暮らすうえで知っておきたいことを、飼い主の目線でまとめています。
   数をそろえるより、一本ずつ書ききることを大事にしています。</p>
+
+  <h2>テーマから読む</h2>
+  <ul class="pick-list">
+{hublinks}
+  </ul>
+
+  <h2>新しい順に読む</h2>
   <ul class="pick-list">
 {items}
   </ul>
@@ -274,13 +491,15 @@ def build():
 '''
     (OUT / "index.html").write_text(idx)
     # 予約ぶんが残っていると、消し忘れた HTML が居座る
-    live = {m["slug"] for m in metas}
+    live = {m["slug"] for m in metas} | {h["slug"] for h, _ in hubs_made}
     for f in OUT.glob("*.html"):
         if f.stem != "index" and f.stem not in live:
             f.unlink()
             print(f"  (取り下げ) {f.name}")
 
-    print(f"記事 {len(metas)}本 + 一覧を書き出しました")
+    print(f"記事 {len(metas)}本 + まとめ {len(hubs_made)}枚 + 一覧を書き出しました")
+    for h, n in hubs_made:
+        print(f'  まとめ  {h["slug"]}.html  {h["title"]} ({n}本)')
     for m in metas:
         print(f'  {m["date"]}  [{m["cat"]}]  {m["slug"]}.html  {m["title"]}')
     if waiting:
