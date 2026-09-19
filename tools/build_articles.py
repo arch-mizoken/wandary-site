@@ -26,7 +26,7 @@ MED_NOTE = ('<p class="med-note">ⓘ 一般的な情報の提供であり、診�
 APP_URL = "https://apps.apple.com/jp/app/id6792701313"
 
 AUTHOR = '''<div class="author">
-    <img src="/img/mark.png" alt="" width="36" height="36">
+    <img src="/img/logo-head.svg" alt="" width="36" height="36">
     <div class="who">
       <strong>文 · Wandary編集部</strong>
       <span>チワワと20年、4匹と暮らしてきました。獣医師ではありません。このページは飼い主としての経験と、一般に知られている情報をもとに書いています。</span>
@@ -329,6 +329,8 @@ def build_hubs(all_metas, head, foot):
 <meta name="twitter:card" content="summary_large_image">
 {hub_jsonld(hub, metas)}
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="/img/logo-micro.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/logo-head.svg">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -404,6 +406,8 @@ def build():
 <meta name="twitter:card" content="summary_large_image">
 {jsonld(m)}
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="/img/logo-micro.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/logo-head.svg">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -463,6 +467,8 @@ def build():
 <meta property="og:image" content="{BASE}/img/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="/img/logo-micro.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/logo-head.svg">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>

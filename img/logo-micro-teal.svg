@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Wandary">
+  <style>
+    /* 配色は「墨色 / 紙色」の2変数のみ。目 (白リング+黒瞳) は固定で反転しない */
+    svg { --ink: #12A594; --paper: #FFFFFF; --eye: #0D7A6E; }
+    .ink   { stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; stroke-linecap: round; }
+    .fur   { fill: var(--ink); }
+    .cream { fill: var(--paper); }
+    .eyeW  { fill: #FFFFFF; stroke: var(--eye); stroke-width: 5; stroke-linejoin: round; }
+    .eyeP  { fill: var(--eye); }
+    .eyeH  { fill: #FFFFFF; }
+    .mouth { fill: none; stroke: var(--ink); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+  <g class="ink" stroke-width="8"> <path class="fur" d="M100 108 C130 108 154 128 154 150 C154 170 130 180 100 180 C70 180 46 170 46 150 C46 128 70 108 100 108 z"></path> <ellipse class="fur" cx="32" cy="96" rx="20" ry="25" transform="rotate(-20 32 96)"></ellipse> <ellipse class="fur" cx="74" cy="56" rx="20" ry="26" transform="rotate(-7 74 56)"></ellipse> <ellipse class="fur" cx="126" cy="56" rx="20" ry="26" transform="rotate(7 126 56)"></ellipse> <ellipse class="fur" cx="168" cy="96" rx="20" ry="25" transform="rotate(20 168 96)"></ellipse> </g>
+</svg>

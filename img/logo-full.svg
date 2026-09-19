@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Wandary">
+  <style>
+    /* 配色は「墨色 / 紙色」の2変数のみ。目 (白リング+黒瞳) は固定で反転しない */
+    svg { --ink: #191919; --paper: #FFFFFF; --eye: #191919; }
+    .ink   { stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; stroke-linecap: round; }
+    .fur   { fill: var(--ink); }
+    .cream { fill: var(--paper); }
+    .eyeW  { fill: #FFFFFF; stroke: var(--eye); stroke-width: 5; stroke-linejoin: round; }
+    .eyeP  { fill: var(--eye); }
+    .eyeH  { fill: #FFFFFF; }
+    .mouth { fill: none; stroke: var(--ink); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+  <g class="ink"> <path class="fur" d="M138 150 L152 140 L150 152 L164 146 L158 158 L172 156 L164 168 L176 170 L164 178 L150 176 L140 168 z"></path> <path class="fur" d="M66 148 C52 160 44 176 46 194 L154 194 C156 176 148 160 134 148 z"></path> <path class="cream" d="M76 150 L80 168 L87 156 L94 172 L100 158 L106 172 L113 156 L120 168 L124 150 C126 178 118 192 100 192 C82 192 74 178 76 150 z"></path> <path class="cream" d="M62 180 C56 186 56 194 60 194 L84 194 C86 188 82 182 76 180 z"></path> <path class="cream" d="M138 180 C144 186 144 194 140 194 L116 194 C114 188 118 182 124 180 z"></path> <path class="fur" d="M42 12 C30 32 26 54 30 74 L18 80 L31 87 L16 95 L29 103 L18 113 L33 117 L24 130 L39 132 L34 147 L50 147 C60 158 78 164 100 164 C122 164 140 158 150 147 L166 147 L161 132 L176 130 L167 117 L182 113 L171 103 L184 95 L169 87 L182 80 L170 74 C174 54 170 32 158 12 C140 18 122 33 112 50 L100 43 L88 50 C78 33 60 18 42 12 z"></path> <path class="cream" stroke="none" d="M48 26 C40 42 37 58 39 72 L45 64 L44 76 L52 66 L54 78 L62 64 L68 70 L72 56 C64 44 57 33 48 26 z"></path> <path class="cream" stroke="none" d="M152 26 C160 42 163 58 161 72 L155 64 L156 76 L148 66 L146 78 L138 64 L132 70 L128 56 C136 44 143 33 152 26 z"></path> <ellipse class="cream" stroke="none" cx="73" cy="76" rx="11" ry="7" transform="rotate(-14 73 76)"></ellipse> <ellipse class="cream" stroke="none" cx="127" cy="76" rx="11" ry="7" transform="rotate(14 127 76)"></ellipse> <circle class="eyeW" cx="70" cy="104" r="21"></circle> <circle class="eyeW" cx="130" cy="104" r="21"></circle> <circle class="eyeP" stroke="none" cx="70" cy="104" r="14"></circle> <circle class="eyeP" stroke="none" cx="130" cy="104" r="14"></circle> <circle class="eyeH" stroke="none" cx="64" cy="98" r="5.4"></circle> <circle class="eyeH" stroke="none" cx="124" cy="98" r="5.4"></circle> <path class="cream" d="M100 96 C119 96 131 108 131 124 C131 140 117 150 100 150 C83 150 69 140 69 124 C69 108 81 96 100 96 z"></path> <ellipse class="fur" stroke="none" cx="100" cy="116" rx="8" ry="6.5"></ellipse> </g> <path class="mouth" d="M100 124 v3 M100 127 C100 134 93 136 89 131 M100 127 C100 134 107 136 111 131"></path>
+</svg>
