@@ -22,12 +22,17 @@
   </url>
   <url>
     <loc>https://wandary.jp/updates/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://wandary.jp/_drafts/privacy-1.1.0.html</loc>
     <lastmod>2026-09-18</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://wandary.jp/knowledge/adopting-from-shelter.html</loc>
+    <lastmod>2026-09-21</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -56,13 +61,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://wandary.jp/knowledge/insurance-compare.html</loc>
+    <lastmod>2026-09-21</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://wandary.jp/knowledge/living.html</loc>
     <lastmod>2026-09-19</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/lost-dog.html</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-09-19</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -72,7 +82,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/moving-notification.html</loc>
-    <lastmod>2026-09-20</lastmod>
+    <lastmod>2026-09-19</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
