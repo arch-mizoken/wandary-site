@@ -53,21 +53,52 @@ def parse(path):
 
 
 def shops(meta):
+    """購入リンクを組み立てる。
+
+    1商品なら          shops: 楽天|URL , Amazon|URL
+    複数の商品を出すなら shops: ラベル>楽天|URL , 別のラベル>楽天|URL
+
+    **同じ記事で複数の商品を薦めるとき、ラベルが無いと全部「楽天で見る」に
+    なって、どれがどれか分からなくなる。**歯みがきのように道具が3つある記事
+    では、ラベルを必ず付けること。
+    """
     raw = meta.get("shops", "").strip()
     if not raw:
         return ('<div class="card"><p><strong>購入リンクは準備中です。</strong>'
                 'アフィリエイトの審査が通り次第、ここに各ストアへのリンクを出します。</p></div>')
-    btns = []
+
+    # ラベルごとにまとめる。順番は書いた順を保つ
+    groups = []
     for item in raw.split(","):
-        name, url = item.split("|", 1)
+        item = item.strip()
+        if not item:
+            continue
+        label, _, rest = item.rpartition(">") if ">" in item else ("", "", item)
+        name, url = rest.split("|", 1)
         cls = SHOP_CLASS.get(name.strip(), "")
         # URL の & は必ずエスケープする。アフィリエイトのリンクは
         # a_id・p_id・pl_id … と & が並ぶので、裸のまま置くとHTMLとして壊れる
         href = html.escape(url.strip(), quote=True)
-        btns.append(f'<a class="btn shop-btn {cls}" href="{href}" '
-                    f'target="_blank" rel="noopener sponsored nofollow" '
-                    f'data-outbound="{meta["slug"]}">{html.escape(name.strip())}で見る</a>')
-    return f'<div class="shop-row">\n    ' + "\n    ".join(btns) + "\n  </div>\n  " + AD_NOTE
+        slug = meta["slug"] if not label else f'{meta["slug"]}:{label.strip()}'
+        btn = (f'<a class="btn shop-btn {cls}" href="{href}" '
+               f'target="_blank" rel="noopener sponsored nofollow" '
+               f'data-outbound="{html.escape(slug)}">{html.escape(name.strip())}で見る</a>')
+        for g in groups:
+            if g["label"] == label.strip():
+                g["btns"].append(btn)
+                break
+        else:
+            groups.append({"label": label.strip(), "btns": [btn]})
+
+    out = []
+    for g in groups:
+        row = '<div class="shop-row">\n    ' + "\n    ".join(g["btns"]) + "\n  </div>"
+        if g["label"]:
+            out.append(f'<div class="shop-group">\n  <p class="shop-label">'
+                       f'{html.escape(g["label"])}</p>\n  {row}\n  </div>')
+        else:
+            out.append(row)
+    return "\n  ".join(out) + "\n  " + AD_NOTE
 
 
 def verdict(meta):

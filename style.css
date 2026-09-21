@@ -174,6 +174,9 @@ p.med-note { color: var(--ink-faint); font-size: 12px; line-height: 1.9; margin-
    離脱して自分で検索し直すため、入っているものを並べて選べるようにする */
 .shop-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 4px; }
 .shop-btn { margin-top: 0; padding: 13px 22px; font-size: 14px; flex: 1 1 auto; text-align: center; min-width: 140px; }
+.shop-group { margin: 18px 0 4px; }
+.shop-group .shop-row { margin: 6px 0 0; }
+.shop-label { font-size: 13px; font-weight: 700; color: var(--ink); margin: 0; }
 .shop-amazon  { background: #E88A1A; }
 .shop-rakuten { background: #C0392B; }
 .shop-yahoo   { background: #7A5AA8; }
