@@ -5,7 +5,7 @@ lead: シートで拭いて、ブラシで磨く。できない日はジェル�
 forwho: これから歯みがきを始める人。一度やってみて、続かなかった人。チワワなど、口の小さい子と暮らす人。
 notfor: 1本ですべて済ませたい人。犬の口をまだ触れない段階の人（そこから始める話は別にあります）。
 draft: false
-shops:
+shops: 歯みがきシート（アップルの香り・30枚×3個）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fpetsmum%2F70001490%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpetsmum%2Fi%2F10043918%2F , 歯ブラシ（デンタルブラシ コンパクト）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhakozume%2F10072167%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhakozume%2Fi%2F10072167%2F , 歯みがきジェル（チキン風味・40g）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4903351003989%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbiccamera%2Fi%2F12438865%2F
 ---
 
 ## この記事を読まなくていい人
@@ -153,6 +153,10 @@ shops:
 - **順番を固定する**（シートで全体 → シートの角で奥 → ブラシとジェル）
 - **できない日は、ジェルだけ。**ゼロの日を作らない
 - **体調の悪い日は、やらない**
+
+<br>
+
+**そして、まず1つだけ買うなら、歯みがきシートです。**指に巻いて拭くところから始められます。**ブラシを口に入れるのは、そのあとで間に合います。**
 
 <br>
 
