@@ -119,11 +119,52 @@ def render_body(md):
     return "\n".join(out)
 
 
+def _grams(text, n=2):
+    """日本語を、文字の2つ組にして数える。
+
+    形態素解析を入れずに「話が近いか」を測るための、いちばん安い方法。
+    「ワクチン」と「予防接種」は繋がらないが、**同じ語が出てくる記事同士は繋がる。**
+    辞書も外部ライブラリも要らないのが、この道具の値打ち。
+    """
+    t = re.sub(r"[\s、。「」（）()・:：/／\-–—\[\]｜|!！?？]+", "", text)
+    return {t[i:i+n] for i in range(len(t) - n + 1)}
+
+
 def related(meta, all_meta, n=3):
-    """同じカテゴリの新しい順。無ければ他カテゴリで埋める"""
-    same = [m for m in all_meta if m["cat"] == meta["cat"] and m["slug"] != meta["slug"]]
-    rest = [m for m in all_meta if m["cat"] != meta["cat"] and m["slug"] != meta["slug"]]
-    picked = (same + rest)[:n]
+    """つぎに読む記事を選ぶ。
+
+    **カテゴリの新しい順ではいけない。**公開が25本でカテゴリが11もあると、
+    同じカテゴリに兄弟がおらず、毎回「他カテゴリの新しい3本」で埋まる。
+    実際そうなっていて、ワクチンの記事から保護犬と保険に送っていた。
+    読み手にも検索エンジンにも、意味がない。
+
+    だから**本文の重なりで測る**。前書きに related: を書けば、そちらが勝つ。
+    """
+    others = [m for m in all_meta if m["slug"] != meta["slug"]]
+
+    # 手で指定してあれば、それを最優先 (related: slug, slug)
+    manual = [x.strip() for x in meta.get("related", "").split(",") if x.strip()]
+    by_slug = {m["slug"]: m for m in others}
+    picked = [by_slug[x] for x in manual if x in by_slug]
+
+    if len(picked) < n:
+        mine = _grams(meta["title"] + meta["lead"] + meta["body"])
+        scored = []
+        for m in others:
+            if m in picked:
+                continue
+            theirs = _grams(m["title"] + m["lead"] + m["body"])
+            if not mine or not theirs:
+                continue
+            # Jaccard。長い記事が有利にならないよう、和で割る
+            overlap = len(mine & theirs) / len(mine | theirs)
+            # 同じカテゴリは、それ自体が「近い」という編集判断なので足す
+            if m["cat"] == meta["cat"]:
+                overlap += 0.05
+            scored.append((overlap, m["date"], m["slug"], m))
+        scored.sort(key=lambda x: (-x[0], x[1]))
+        picked += [x[3] for x in scored[: n - len(picked)]]
+
     if not picked:
         return ""
     items = "\n".join(
@@ -158,13 +199,73 @@ def app_cta(meta):
 '''
 
 
+def with_toc(body_html, least=5):
+    """見出しに印をつけ、数が多ければ目次を作る。
+
+    長い記事は、**開いた瞬間に「自分の知りたいことが書いてあるか」が分からない**と
+    そのまま閉じられる。目次があると、そこで判断してもらえる。
+    検索結果に見出しへの飛び先が出ることもある。
+
+    見出しが少ない記事には付けない。3つしかない目次は、ただの重複。
+    """
+    heads = re.findall(r"  <h2>(.*?)</h2>", body_html)
+    if len(heads) < least:
+        return "", body_html
+    out, i = [], 0
+    for line in body_html.split("\n"):
+        m = re.match(r"  <h2>(.*?)</h2>", line)
+        if m:
+            i += 1
+            out.append(f'  <h2 id="s{i}">{m.group(1)}</h2>')
+        else:
+            out.append(line)
+    items = "\n".join(
+        f'      <li><a href="#s{n}">{h}</a></li>' for n, h in enumerate(heads, 1))
+    toc = f'''  <nav class="toc" aria-label="目次">
+    <p class="toc-label">この記事の中身</p>
+    <ol>
+{items}
+    </ol>
+  </nav>
+'''
+    return toc, "\n".join(out)
+
+
+def search_description(meta, low=80, cap=118):
+    """検索結果に出る説明文。
+
+    **lead だけだと短すぎる。**37〜53字で、日本語の表示枠 (およそ90〜120字) の
+    半分も使っていなかった。空けておくと Google が本文から勝手に拾うので、
+    **こちらで決めた文を出したほうがいい。**
+
+    足りないぶんは本文の頭から、文の切れ目で足す。途中で切らない。
+    """
+    desc = meta["lead"].strip()
+    if len(desc) >= low:
+        return desc[:cap]
+    first = next((b.strip() for b in meta["body"].split("\n\n")
+                  if b.strip() and not b.strip().startswith(("#", "-", "|", ">"))), "")
+    first = re.sub(r"\*\*", "", first)
+    first = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", first)
+    for sentence in re.findall(r"[^。]+。", first):
+        if len(desc) + len(sentence) > cap:
+            break
+        desc += sentence
+        if len(desc) >= low:
+            break
+    return desc
+
+
 def jsonld(meta):
     d = {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": meta["title"],
-        "description": meta["lead"],
+        "description": search_description(meta),
         "datePublished": meta["date"],
+        # 更新日。前書きに updated: があればそれ、無ければ公開日。
+        # 無いと「いつの情報か」を検索エンジンが判断できない
+        "dateModified": meta.get("updated", meta["date"]),
         "author": {"@type": "Organization", "name": "Wandary編集部"},
         "publisher": {"@type": "Organization", "name": "Wandary",
                       "logo": {"@type": "ImageObject", "url": f"{BASE}/img/mark.png"}},
@@ -172,7 +273,19 @@ def jsonld(meta):
         "image": f"{BASE}/img/ogp.png",
         "inLanguage": "ja",
     }
-    return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False) + "</script>"
+    # パンくず。検索結果に階層が出て、どこの何かが伝わる
+    crumbs = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "ホーム", "item": f"{BASE}/"},
+            {"@type": "ListItem", "position": 2, "name": "よみもの", "item": f"{BASE}/knowledge/"},
+            {"@type": "ListItem", "position": 3, "name": meta["title"],
+             "item": f"{BASE}/knowledge/{meta['slug']}.html"},
+        ],
+    }
+    return ('<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False) + "</script>\n"
+            '<script type="application/ld+json">' + json.dumps(crumbs, ensure_ascii=False) + "</script>")
 
 
 # ── まとめページ (ハブ) ──
@@ -328,6 +441,8 @@ def build_hubs(all_metas, head, foot):
 <meta property="og:image" content="{BASE}/img/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 {hub_jsonld(hub, metas)}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
@@ -391,21 +506,28 @@ def build():
     metas.sort(key=lambda m: (m["date"], m["slug"]), reverse=True)
 
     for m in metas:
+        toc, body_html = with_toc(render_body(m["body"]))
         page = f'''<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(m["title"])} | Wandary</title>
-<meta name="description" content="{html.escape(m["lead"], quote=True)}">
+<meta name="description" content="{html.escape(search_description(m), quote=True)}">
 <link rel="canonical" href="{BASE}/knowledge/{m["slug"]}.html">
 <meta property="og:type" content="article">
+<meta property="og:site_name" content="Wandary">
 <meta property="og:title" content="{html.escape(m["title"], quote=True)}">
-<meta property="og:description" content="{html.escape(m["lead"], quote=True)}">
+<meta property="og:description" content="{html.escape(search_description(m), quote=True)}">
+<meta property="article:published_time" content="{m["date"]}">
+<meta property="article:modified_time" content="{m.get("updated", m["date"])}">
+<meta property="article:section" content="{html.escape(m["cat"], quote=True)}">
 <meta property="og:url" content="{BASE}/knowledge/{m["slug"]}.html">
 <meta property="og:image" content="{BASE}/img/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 {jsonld(m)}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
@@ -423,7 +545,8 @@ def build():
   <h1 class="article-title">{html.escape(m["title"])}</h1>
   <p class="article-lead">{inline(m["lead"])}</p>
 
-{render_body(m["body"])}
+{toc}
+{body_html}
 
   {MED_NOTE}
 
@@ -468,6 +591,8 @@ def build():
 <meta property="og:url" content="{BASE}/knowledge/">
 <meta property="og:image" content="{BASE}/img/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">

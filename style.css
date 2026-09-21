@@ -211,6 +211,20 @@ p.med-note { color: var(--ink-faint); font-size: 12px; line-height: 1.9; margin-
    離脱して自分で検索し直すため、入っているものを並べて選べるようにする */
 .shop-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 4px; }
 .shop-btn { margin-top: 0; padding: 13px 22px; font-size: 14px; flex: 1 1 auto; text-align: center; min-width: 140px; }
+/* 目次。長い記事の頭に置く。読む前に「自分の知りたいことがあるか」を決めてもらう */
+.toc {
+  background: var(--paper2); border: 1px solid var(--line-2);
+  border-radius: 12px; padding: 18px 22px; margin: 0 0 30px;
+}
+.toc-label { font-size: 12.5px; font-weight: 700; color: var(--ink-soft); margin: 0 0 10px; letter-spacing: .04em; }
+.toc ol { margin: 0; padding-left: 1.4em; }
+.toc li { font-size: 14.5px; line-height: 1.85; margin-bottom: 4px; color: var(--ink-soft); }
+.toc li:last-child { margin-bottom: 0; }
+.toc a { color: var(--accent-dark); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+/* 目次から飛んだとき、見出しがヘッダの下に隠れないように */
+.article h2[id] { scroll-margin-top: 20px; }
+
 .shop-group { margin: 18px 0 4px; }
 .shop-group .shop-row { margin: 6px 0 0; }
 .shop-label { font-size: 13px; font-weight: 700; color: var(--ink); margin: 0; }
