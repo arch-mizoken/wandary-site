@@ -1,6 +1,15 @@
 {
-  "version": 3,
+  "version": 4,
   "announcements": [
+    {
+      "id": "ask-caregivers",
+      "dateString": "2026-09-21",
+      "emoji": "🙋",
+      "title": "ひとつだけ、教えてください",
+      "body": "家族と一緒に記録できるようにするか、いま考えています。作るかどうかを決める前に、実際のところを知りたいです。おこたえは3秒で終わります。お名前もメールアドレスも受け取りません。",
+      "link": "https://wandary.jp/ask/caregivers.html",
+      "publishUntil": "2026-10-31"
+    },
     {
       "id": "v1-1-0-widget",
       "dateString": "2026-09-21",
