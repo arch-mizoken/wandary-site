@@ -5,7 +5,7 @@ lead: 首輪をやめて、胴で支えるものに替えました。号数の�
 forwho: 引っ張ると苦しそうにする子。首輪が抜けないか不安な人。冬に服を着せる人。長く使えるものを探している人。
 notfor: とにかく安く済ませたい人。散歩がごく短く、いまの首輪で何も困っていない人。洗濯機で丸洗いできるものがいい人。
 draft: false
-shops: ハーネス本体（3号・スワロフスキー付き）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fdogskip%2Fbb-reg-3-wc%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdogskip%2Fi%2F10021642%2F , リード（すべて本革）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fdogskip%2Fbuddybelt-allle-124%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdogskip%2Fi%2F10000749%2F , リード（本革＋ナイロン）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fdogskip%2Fbuddybelt-al-124%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdogskip%2Fi%2F10000726%2F
+shops: バディーベルト一覧（号数・色はここから）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fdogskip%2Fc%2F0000000206%2F , リード（すべて本革）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fdogskip%2Fbuddybelt-allle-124%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdogskip%2Fi%2F10000749%2F , リード（本革＋ナイロン）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fdogskip%2Fbuddybelt-al-124%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fdogskip%2Fi%2F10000726%2F
 ---
 
 ## この記事を読まなくていい人
