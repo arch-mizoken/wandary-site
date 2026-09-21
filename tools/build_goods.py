@@ -13,13 +13,17 @@
     shops:   楽天|URL / Amazon|URL / 公式|URL をカンマ区切り。空なら買う導線を出さない
     draft:   true なら出力しない (書きかけ)
 
+**道具は体に触れるので、よみものと同じ医療の注記 (.med-note) を入れる。**
+ハーネスと気管、マットと滑り、歯みがき。どれも「これで治る」に
+寄りやすい。読み手が判断を誤らないよう、ページの側で線を引いておく。
+
 **アフィリエイトのリンクを入れたら、ステマ規制の表示 (.ad-note) が
 自動で出る。** shops が空のあいだは出ない。
 """
 import re, pathlib, html, json, sys, datetime
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from build_articles import chrome, inline, render_body, AUTHOR, BASE
+from build_articles import chrome, inline, render_body, AUTHOR, BASE, MED_NOTE
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_goods"
@@ -123,6 +127,8 @@ def build(preview_dir=None):
 {render_body(m["body"])}
 
   {shops(m)}
+
+  {MED_NOTE}
 
   {AUTHOR}
   </div>
