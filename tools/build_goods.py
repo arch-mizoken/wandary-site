@@ -3,6 +3,10 @@
 
     python3 tools/build_goods.py
     python3 tools/sitemap.py
+    python3 tools/check_links.py    ← 公開前に必ず
+
+**予約公開の記事へリンクすると、その日まで404になる。**原稿は _articles/ に
+あるので、書いているときは気づけない。機械で見ること。
 
 記事 (build_articles.py) と同じ書き方。違うのは前書きの項目だけ:
 
