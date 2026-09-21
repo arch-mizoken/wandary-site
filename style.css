@@ -24,13 +24,23 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* 本文は読み物用の角ゴシック。
+   丸ゴシック (Zen Maru Gothic) は Wandary の看板の字で、見出しとロゴには効くが、
+   長文で使うと字面が揃いすぎて目が滑る。**読むところと、名乗るところで書体を分ける。** */
 body {
-  font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
+  font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP',
+               'Yu Gothic Medium', 'Yu Gothic', Meiryo, sans-serif;
   background: var(--paper);
   color: var(--ink);
   line-height: 1.9;
-  font-size: 15px;
+  font-size: 15.5px;
   -webkit-font-smoothing: antialiased;
+}
+
+/* 看板と見出しだけ、丸ゴシックのまま */
+.brand span, .page-title, .article-title,
+.article h2, .article h3, h1, h2, h3 {
+  font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
 }
 
 a { color: var(--accent-dark); }
@@ -86,11 +96,38 @@ strong { color: var(--ink); font-weight: 700; }
 
 /* 記事本文。.article p は (0,0,1,1) なので、これより後ろに置く
    コンポーネント側のルールは p.xxx の形にして詳細度を合わせる */
-.article p { font-size: 16px; line-height: 2.0; color: var(--ink-body); margin-bottom: 1.3em; }
-.article h2 { font-size: 19px; font-weight: 900; margin: 38px 0 14px; }
-.article ul { margin: 6px 0 1.4em; }
-.article li { font-size: 16px; line-height: 2.0; color: var(--ink-body); margin-bottom: 0.5em; }
+.article p {
+  font-size: 17px; line-height: 1.95; letter-spacing: 0.02em;
+  color: var(--ink-body); margin-bottom: 1.65em;
+}
+/* 見出しは「段落より少し大きい」ではなく、はっきり段を作る。
+   上の余白を下の3倍ほど取ると、どこで話が変わったかが一目で分かる */
+.article h2 {
+  font-size: 21px; font-weight: 700; line-height: 1.6;
+  color: var(--ink); margin: 52px 0 16px; letter-spacing: 0.01em;
+}
+.article h2:first-child { margin-top: 8px; }
+/* h3 は定義が無く、ブラウザ既定のままだった。記事で多用するので、きちんと置く */
+.article h3 {
+  font-size: 17.5px; font-weight: 700; line-height: 1.7;
+  color: var(--ink); margin: 34px 0 10px;
+}
+.article ul { margin: 6px 0 1.7em; padding-left: 1.3em; }
+.article li {
+  font-size: 17px; line-height: 1.95; letter-spacing: 0.02em;
+  color: var(--ink-body); margin-bottom: 0.7em;
+}
+/* 太字は色で立てる。本文より一段濃くするだけで、字の太さに頼らずに済む */
+.article strong { font-weight: 700; color: var(--ink); }
 .article p:last-child, .article ul:last-child { margin-bottom: 0; }
+
+/* 引用。記事の中で「ここだけ声色が違う」ところに使う */
+.article blockquote {
+  margin: 22px 0; padding: 2px 0 2px 18px;
+  border-left: 3px solid var(--tint);
+}
+.article blockquote p { margin-bottom: 0.8em; color: var(--ink-soft); }
+.article blockquote p:last-child { margin-bottom: 0; }
 
 
 /* 白面の中に置く副次的なかたまり。地の白と区別するため薄いグレーにする */
@@ -105,7 +142,7 @@ table {
 }
 th, td {
   text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line-2);
-  vertical-align: top; font-size: 13.5px; line-height: 1.85;
+  vertical-align: top; font-size: 14.5px; line-height: 1.9;
 }
 th { width: 32%; color: var(--ink); font-weight: 700; background: var(--paper2); }
 td { color: var(--ink-soft); }
@@ -188,7 +225,7 @@ p.med-note { color: var(--ink-faint); font-size: 12px; line-height: 1.9; margin-
   font-size: 28px; font-weight: 900; color: var(--ink);
   line-height: 1.55; letter-spacing: 0.2px; margin: 0 0 14px;
 }
-p.article-lead { font-size: 15.5px; font-weight: 500; line-height: 1.9; color: var(--ink-soft); margin: 0 0 28px; }
+p.article-lead { font-size: 16px; font-weight: 400; line-height: 1.95; letter-spacing: 0.01em; color: var(--ink-soft); margin: 0 0 30px; }
 .article-date { font-size: 12px; color: var(--ink-faint); }
 @media (max-width: 560px) { .article-title { font-size: 23px; } }
 

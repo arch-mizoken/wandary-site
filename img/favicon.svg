@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="Wandary">
+  <!-- 肉球。16px でも潰れないよう、ベタ地に白抜きにしてある -->
+  <rect width="1024" height="1024" rx="225" fill="#12A594"/>
+  <g fill="#FFFFFF">
+    <ellipse cx="272" cy="400" rx="64"  ry="79"/>
+    <ellipse cx="434" cy="322" rx="70"  ry="85"/>
+    <ellipse cx="602" cy="322" rx="70"  ry="85"/>
+    <ellipse cx="764" cy="400" rx="64"  ry="79"/>
+    <ellipse cx="518" cy="640" rx="200" ry="160"/>
+    <ellipse cx="408" cy="728" rx="105" ry="95"/>
+    <ellipse cx="628" cy="728" rx="105" ry="95"/>
+  </g>
+</svg>

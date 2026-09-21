@@ -329,8 +329,9 @@ def build_hubs(all_metas, head, foot):
 <meta name="twitter:card" content="summary_large_image">
 {hub_jsonld(hub, metas)}
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="icon" href="/img/logo-micro.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/img/logo-head.svg">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -406,8 +407,9 @@ def build():
 <meta name="twitter:card" content="summary_large_image">
 {jsonld(m)}
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="icon" href="/img/logo-micro.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/img/logo-head.svg">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -467,8 +469,9 @@ def build():
 <meta property="og:image" content="{BASE}/img/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="icon" href="/img/logo-micro.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/img/logo-head.svg">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
