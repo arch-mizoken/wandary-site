@@ -61,8 +61,11 @@ def shops(meta):
     for item in raw.split(","):
         name, url = item.split("|", 1)
         cls = SHOP_CLASS.get(name.strip(), "")
-        btns.append(f'<a class="btn shop-btn {cls}" href="{url.strip()}" '
-                    f'target="_blank" rel="noopener sponsored" '
+        # URL の & は必ずエスケープする。アフィリエイトのリンクは
+        # a_id・p_id・pl_id … と & が並ぶので、裸のまま置くとHTMLとして壊れる
+        href = html.escape(url.strip(), quote=True)
+        btns.append(f'<a class="btn shop-btn {cls}" href="{href}" '
+                    f'target="_blank" rel="noopener sponsored nofollow" '
                     f'data-outbound="{meta["slug"]}">{html.escape(name.strip())}で見る</a>')
     return f'<div class="shop-row">\n    ' + "\n    ".join(btns) + "\n  </div>\n  " + AD_NOTE
 
