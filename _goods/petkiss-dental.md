@@ -4,6 +4,14 @@ title: 毎晩5分の歯みがき。続けるために、道具を3つ使って�
 lead: シートで拭いて、ブラシで磨く。できない日はジェルだけ。4匹と続けてきたやり方と、やめた道具の話です。
 forwho: これから歯みがきを始める人。一度やってみて、続かなかった人。チワワなど、口の小さい子と暮らす人。
 notfor: 1本ですべて済ませたい人。犬の口をまだ触れない段階の人（そこから始める話は別にあります）。
+emoji: 🦷
+pickcat: ケア
+ages: 全世代
+breeds: チワワ
+pick1: 歯ブラシ、歯みがきシート、歯みがきジェルの3つを使っています。3つあるのは贅沢だからではなく、そうしないと続かなかったからです。毎晩、1匹5分ちょっとです。
+pick2: シートを折って角を少し尖らせると、指がまっすぐ入らない奥歯や歯の内側まで届きます。これが分かってから、奥歯が楽になりました。
+pick3: できない日は、ジェルだけを口の中に塗って、翌日しっかり磨きます。ゼロの日を作らない。「今日はできなかった」が続くと、そのままやめてしまうからです。
+picknot: 指サック型のシートはやめました。当たる面が決まっていて、同じ面で拭き続けることになるからです。ヘッドの大きい歯ブラシも、口の小さい子には奥歯に届きませんでした。
 draft: false
 shops: 歯みがきシート（アップルの香り・30枚×3個）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fpetsmum%2F70001490%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fpetsmum%2Fi%2F10043918%2F , 歯ブラシ（デンタルブラシ コンパクト）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhakozume%2F10072167%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhakozume%2Fi%2F10072167%2F , 歯みがきジェル（チキン風味・40g）>楽天|https://af.moshimo.com/af/c/click?a_id=5812091&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fbiccamera%2F4903351003989%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fbiccamera%2Fi%2F12438865%2F
 ---
