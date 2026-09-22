@@ -26,7 +26,41 @@ def targets(href):
         return ROOT / (path.lstrip("/") + "index.html")
     return ROOT / path.lstrip("/")
 
+# 制度の金額や期限は変わる。**変わったことに気づかないのが、いちばん怖い。**
+# 実際、マイクロチップの登録手数料は2024年4月に上がっていたのに、
+# 2026年9月まで古い金額 (300円/1,000円) を載せたままだった。
+#
+# 出典と、最後に確かめた日を持つ。古くなったら、ここが言う。
+FACTS = [
+    # (何の数字か, 公開しているページに出ているべき語, 最後に確かめた日, 出典)
+    ("マイクロチップ登録手数料", "400円", "2026-09-22",
+     "https://www.env.go.jp/nature/dobutsu/aigo/pickup/chip.html"),
+    ("犬の登録手数料", "3,000円", "2026-09-22",
+     "https://www.mhlw.go.jp/bunya/kenkou/kekkaku-kansenshou10/10.html"),
+    ("注射済票の交付手数料", "550円", "2026-09-22",
+     "https://www.mhlw.go.jp/bunya/kenkou/kekkaku-kansenshou10/10.html"),
+]
+STALE_AFTER_DAYS = 365
+
+
+def check_facts():
+    """載せている金額が、確かめた日から1年たっていないか"""
+    import datetime
+    today = datetime.date.today()
+    old = []
+    for name, _, checked, src in FACTS:
+        days = (today - datetime.date.fromisoformat(checked)).days
+        if days > STALE_AFTER_DAYS:
+            old.append(f"  {name} — {days}日前に確かめたきり  {src}")
+    if old:
+        print("確かめ直したほうがいい数字:")
+        print("\n".join(old))
+        print()
+    return len(old)
+
+
 def main():
+    stale = check_facts()
     broken = []
     pages = [p for p in ROOT.rglob("*.html")
              if not any(part in SKIP_DIRS or part.startswith(".") for part in p.parts)]
@@ -38,7 +72,7 @@ def main():
 
     if not broken:
         print(f"内部リンク: {len(pages)} ページ、切れているものはありません")
-        return 0
+        return 1 if stale else 0
 
     print("行き先が無いリンク:")
     for page, href in broken:
