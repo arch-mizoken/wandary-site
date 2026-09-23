@@ -3,6 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 別ドメインへ移すまでのあいだ、検索結果に出さない。
+     いま wandary.jp の下で拾われると、移したあと「消えたページ」と
+     「重複コンテンツ」の後始末が要る。
+     **robots.txt で Disallow にしないこと。** 読みに来られなくなると、
+     この noindex 自体が読まれず、かえって消えなくなる。 -->
+<meta name="robots" content="noindex, nofollow">
 <title>nyandary（ニャンダリー）— 毎日のひと記録が、この子だけの「いつも」になる。猫の観察記録アプリ</title>
 <meta name="description" content="トイレ掃除やごはんのついでに、1タップで残す。判定もスコアもありません。この子の「いつも」が2週間でできて、相談のときは1枚で渡せます。iPhone用の猫の記録アプリ。">
 
