@@ -27,7 +27,7 @@
 import re, pathlib, html, json, sys, datetime
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from build_articles import chrome, inline, render_body, AUTHOR, BASE, MED_NOTE
+from build_articles import chrome, inline, render_body, AUTHOR, BASE, MED_NOTE, APP_URL
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "_goods"
@@ -39,6 +39,34 @@ AD_NOTE = ('<div class="ad-note">当ページのリンクには広告 (アフィ
 
 SHOP_CLASS = {"Amazon": "shop-amazon", "楽天": "shop-rakuten",
               "Yahoo": "shop-yahoo", "公式": ""}
+
+# 道具箱にだけ、アプリへの導線が無かった。
+#
+# よみものは29本中28本に出しているのに、道具箱は0本だった。
+# **道具箱に来る人は、買う気で検索してきた人**なので、いちばん濃い。
+# 5,000字読んで、店へ行って、それきりになっていた。
+#
+# 置くのは買う導線の**あと**。先に置くと、このページの目的である
+# 購入のクリックを食う。
+CTA_TITLE = "替えた日も、続けた日も、記録になります"
+CTA_BODY = ("Wandary は、ごはん・うんち・散歩・お薬・気になる様子をワンタップで残せる iOS アプリです。"
+            "道具を替えた日を残しておくと、**そのあと何が変わったか**をあとから確かめられます。"
+            "歯みがきのように続けるものは、続いた日数がそのまま残ります。")
+
+
+def app_cta(meta, label="この記事のアプリ"):
+    """記事ごとに書き分けたいときは、前書きに cta / ctabody を書く"""
+    return f'''
+  <div class="app-cta">
+    <span class="app-cta-label">{label}</span>
+    <span class="app-cta-title">{html.escape(meta.get("cta") or CTA_TITLE)}</span>
+    <p>{inline(meta.get("ctabody") or CTA_BODY)}</p>
+    <div class="app-cta-actions">
+      <a class="btn" href="{APP_URL}">App Store で見る</a>
+      <span class="note">無料 · iPhone</span>
+    </div>
+  </div>
+'''
 
 
 def parse(path):
@@ -170,7 +198,7 @@ def build(preview_dir=None):
   {shops(m)}
 
   {MED_NOTE}
-
+{app_cta(m)}
   {AUTHOR}
   </div>
 </main>
@@ -212,7 +240,7 @@ def build(preview_dir=None):
 <meta property="og:image" content="{BASE}/img/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet"<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="stylesheet" href="../style.css">
@@ -226,6 +254,7 @@ def build(preview_dir=None):
   <p>品ぞろえは目指していません。<strong>本当に使ったものだけ</strong>を、少しずつ増やしていきます。合わなかったものも、そのまま書きます。</p>
 
 {body}
+{app_cta({}, label="Wandary")}
   {AUTHOR}
   </div>
 </main>
