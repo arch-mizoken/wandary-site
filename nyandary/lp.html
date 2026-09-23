@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nyandary（ニャンダリー）— 毎日のひと記録が、この子だけの「いつも」になる。猫の観察記録アプリ</title>
+<meta name="description" content="トイレ掃除やごはんのついでに、1タップで残す。判定もスコアもありません。この子の「いつも」が2週間でできて、相談のときは1枚で渡せます。iPhone用の猫の記録アプリ。">
+
+<link rel="canonical" href="https://wandary.jp/nyandary/lp.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="nyandary（ニャンダリー）— 毎日のひと記録が、この子だけの「いつも」になる。">
+<meta property="og:description" content="トイレ掃除やごはんのついでに、1タップで残す。判定もスコアもありません。相談のときは、1枚で渡せます。">
+<meta property="og:image" content="https://wandary.jp/nyandary/img/ogp.png">
+<meta property="og:url" content="https://wandary.jp/nyandary/lp.html">
+<meta property="og:site_name" content="nyandary">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="nyandary（ニャンダリー）— 毎日のひと記録が、この子だけの「いつも」になる。">
+<meta name="twitter:description" content="トイレ掃除やごはんのついでに、1タップで残す。判定もスコアもありません。相談のときは、1枚で渡せます。">
+<meta name="twitter:image" content="https://wandary.jp/nyandary/img/ogp.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --accent: #A97449;
+  --accent-dark: #8C5E33;
+  --accent-light: #C99A67;
+  --tint: #F4E7D6;
+  --paper: #FBF7F1;
+  --card: #FFFFFF;
+  --ink: #33291F;
+  --ink-soft: #6B5B4A;
+  --ink-faint: #9C8D7C;
+  --line: #E8DCCB;
+  --cream: #FDF8EC;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.9;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent-dark); }
+a:hover { color: var(--accent); }
+img { max-width: 100%; height: auto; display: block; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+/* ── ヒーロー ── */
+.hero {
+  background: linear-gradient(165deg, #CE9F6B 0%, #B5804E 45%, #8C5E33 100%);
+  color: var(--cream);
+  padding: 44px 20px 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 2; }
+.brandmark { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.brandmark svg { width: 62px; height: 54px; overflow: visible; }
+.brandmark .name {
+  font-size: 30px; font-weight: 900; letter-spacing: 0.5px; line-height: 1;
+}
+.reading {
+  font-size: 11.5px; font-weight: 700; letter-spacing: 3px;
+  margin-top: 7px; opacity: 0.72;
+}
+.hero h1 {
+  font-size: 30px; font-weight: 900; line-height: 1.5; margin-top: 18px;
+  text-wrap: pretty; text-shadow: 0 2px 12px rgba(40,26,10,0.18);
+}
+.hero .lead {
+  font-size: 15px; line-height: 1.85; margin-top: 16px; opacity: 0.94;
+  text-wrap: pretty;
+}
+.hero-shot { margin-top: 30px; display: flex; justify-content: center; }
+.hero-shot .phone { margin-bottom: -22px; }
+
+/* ── 端末フレーム ── */
+.phone {
+  width: 244px;
+  border-radius: 34px;
+  padding: 7px;
+  background: #2C2117;
+  box-shadow: 0 18px 44px rgba(48,32,14,0.28);
+  flex-shrink: 0;
+}
+.phone img { border-radius: 27px; }
+
+/* ── CTA ── */
+.cta-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  background: var(--cream); color: #7A5029 !important;
+  font-weight: 700; font-size: 15.5px; text-decoration: none;
+  border-radius: 14px; padding: 15px 30px;
+  box-shadow: 0 6px 18px rgba(48,32,14,0.20);
+  transition: transform 0.15s ease;
+}
+a.cta-btn:hover { transform: translateY(-2px); }
+.cta-btn svg { width: 17px; height: 17px; flex-shrink: 0; }
+/* 公開前の状態。App Store に出たら、下の「公開したら」のコメントの通りに差し替える */
+.cta-btn.soon { cursor: default; opacity: 0.94; }
+.cta-note { font-size: 12px; color: var(--ink-faint); margin-top: 10px; }
+.hero .cta-note, .final .cta-note { color: rgba(253,248,236,0.78); }
+
+/* ── セクション ── */
+section { padding: 52px 0; }
+.sec-label {
+  font-size: 11.5px; font-weight: 700; letter-spacing: 1.4px;
+  color: var(--accent); text-transform: uppercase;
+}
+h2 {
+  font-size: 23px; font-weight: 900; line-height: 1.55; margin-top: 8px;
+  text-wrap: pretty;
+}
+.sec-body { font-size: 15px; color: var(--ink-soft); margin-top: 14px; text-wrap: pretty; }
+
+/* ── 機能ブロック ── */
+.feature { display: flex; gap: 40px; align-items: center; margin-top: 44px; }
+.feature .phone { width: 208px; }
+.feature:first-of-type { margin-top: 34px; }
+.feature.flip { flex-direction: row-reverse; }
+.feature-text { flex: 1; }
+.feature-text h3 {
+  font-size: 19px; font-weight: 900; line-height: 1.6; text-wrap: pretty;
+}
+.feature-text p { font-size: 14.5px; color: var(--ink-soft); margin-top: 10px; text-wrap: pretty; }
+
+/* ── 「言わないこと」の対比表 ── */
+.says { margin-top: 26px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.says-row { display: flex; border-top: 1px solid var(--line); }
+.says-row:first-child { border-top: 0; }
+.says-row > div { flex: 1; padding: 14px 16px; font-size: 14px; line-height: 1.8; text-wrap: pretty; }
+.says-no { background: #F6F1E9; color: var(--ink-faint); text-decoration: line-through; text-decoration-color: rgba(156,141,124,0.5); }
+.says-yes { background: var(--card); color: var(--ink); font-weight: 700; }
+.says-head { font-size: 11.5px !important; font-weight: 700; letter-spacing: 0.8px; padding: 9px 16px !important; }
+.says-head.says-no { color: var(--ink-faint); text-decoration: none; }
+.says-head.says-yes { color: var(--accent-dark); }
+
+/* ── 静かな約束のブロック ── */
+.quiet {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 26px 24px; margin-top: 26px;
+}
+.quiet h3 { font-size: 16.5px; font-weight: 700; }
+.quiet p { font-size: 14.5px; color: var(--ink-soft); margin-top: 8px; text-wrap: pretty; }
+
+/* ── なぜ猫なのか ── */
+.story { border-top: 1px solid var(--line); padding-bottom: 72px; }
+.story-body { max-width: 620px; margin: 0 auto; }
+.story-body p {
+  font-size: 15px; color: var(--ink-soft); line-height: 2.05;
+  margin-top: 20px; text-wrap: pretty;
+}
+.story-pull {
+  text-align: center; margin: 34px auto; max-width: 620px;
+  padding-top: 30px; border-top: 1px solid var(--line);
+}
+.story-pull span {
+  display: block; font-size: 18px; font-weight: 700;
+  color: var(--accent-dark); line-height: 2.0;
+}
+.story-sign {
+  text-align: center; margin: 38px auto 0; max-width: 620px;
+  padding-top: 28px; border-top: 1px solid var(--line);
+  font-size: 15.5px; font-weight: 700; color: var(--accent-dark);
+  line-height: 1.95; text-wrap: pretty;
+}
+
+/* ── 料金 ── */
+.plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 26px; }
+.plan {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 22px 20px;
+}
+.plan.premium { border-color: var(--accent); border-width: 1.5px; }
+.plan .plan-name { font-size: 13px; font-weight: 700; color: var(--accent-dark); }
+.plan .plan-price { font-size: 21px; font-weight: 900; margin-top: 4px; line-height: 1.4; }
+.plan .plan-price small { font-size: 12.5px; font-weight: 500; color: var(--ink-faint); }
+.plan ul { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+.plan li {
+  font-size: 13.5px; color: var(--ink-soft); line-height: 1.65;
+  display: flex; gap: 8px; align-items: flex-start;
+}
+.plan li svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 5px; }
+
+/* ── 最終CTA ── */
+.final {
+  background: linear-gradient(165deg, #CE9F6B 0%, #B5804E 50%, #8C5E33 100%);
+  color: var(--cream); text-align: center; padding: 54px 20px;
+}
+.final h2 { font-size: 24px; text-shadow: 0 2px 12px rgba(40,26,10,0.18); }
+.final p { font-size: 14.5px; opacity: 0.94; margin-top: 14px; text-wrap: pretty; }
+.final .cta-btn { margin-top: 26px; }
+
+/* ── 注記・フッター ── */
+.disclaimer {
+  font-size: 12px; color: var(--ink-faint); line-height: 1.85;
+  border-top: 1px solid var(--line); padding-top: 22px; margin-top: 8px;
+  text-wrap: pretty;
+}
+footer {
+  border-top: 1px solid var(--line); padding: 24px 20px 40px;
+  text-align: center; font-size: 12.5px; color: var(--ink-faint);
+}
+footer .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; }
+footer a { text-decoration: none; }
+
+@media (max-width: 640px) {
+  .hero { padding-top: 36px; }
+  .hero h1 { font-size: 25px; margin-top: 20px; }
+  .hero .lead { font-size: 14.5px; }
+  h2 { font-size: 21px; }
+  section { padding: 44px 0; }
+  .feature, .feature.flip { flex-direction: column; gap: 24px; margin-top: 38px; }
+  .feature-text { width: 100%; }
+  .phone { width: 218px; }
+  .plans { grid-template-columns: minmax(0, 1fr); }
+  .cta-btn { width: 100%; }
+  .says-row { flex-direction: column; }
+  .says-row > div { border-top: 1px solid var(--line); }
+  .says-row > div:first-child { border-top: 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brandmark">
+      <svg viewBox="-40 -20 320 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><clipPath id="c4h"><ellipse cx="120" cy="110" rx="80" ry="62"></ellipse></clipPath><clipPath id="c4b"><ellipse cx="120" cy="170" rx="76" ry="54"></ellipse></clipPath></defs><path d="M178 198 C216 200 228 162 207 138" fill="none" stroke="#3B2A1D" stroke-width="30" stroke-linecap="round"></path><path d="M178 198 C216 200 228 162 207 138" fill="none" stroke="#EFA962" stroke-width="18" stroke-linecap="round"></path><path d="M211 150 C210 145 209 141 207 138" fill="none" stroke="#FFF4E3" stroke-width="18" stroke-linecap="round"></path><path d="M204 150 l10 -2 M212 170 l10 3" stroke="#C47535" stroke-width="6" stroke-linecap="round"></path><path d="M64 88 C54 64 52 42 58 29 C65 26 88 44 106 64 Z" fill="#EFA962" stroke="#3B2A1D" stroke-width="6" stroke-linejoin="round"></path><path d="M176 88 C186 64 188 42 182 29 C175 26 152 44 134 64 Z" fill="#EFA962" stroke="#3B2A1D" stroke-width="6" stroke-linejoin="round"></path><path d="M68 76 C63 60 62 48 65 41 C72 45 84 55 93 65 Z" fill="#F4B3A2"></path><path d="M172 76 C177 60 178 48 175 41 C168 45 156 55 147 65 Z" fill="#F4B3A2"></path><ellipse cx="120" cy="170" rx="76" ry="54" fill="#EFA962" stroke="#3B2A1D" stroke-width="6"></ellipse><g clip-path="url(#c4b)"><path d="M50 168 q16 -6 26 6 M46 190 q16 -6 26 6 M190 168 q-16 -6 -26 6 M194 190 q-16 -6 -26 6" fill="none" stroke="#C47535" stroke-width="7" stroke-linecap="round"></path><ellipse cx="120" cy="198" rx="50" ry="30" fill="#FFF4E3"></ellipse></g><ellipse cx="120" cy="170" rx="76" ry="54" fill="none" stroke="#3B2A1D" stroke-width="6"></ellipse><ellipse cx="120" cy="110" rx="80" ry="62" fill="#EFA962" stroke="#3B2A1D" stroke-width="6"></ellipse><g clip-path="url(#c4h)"><path d="M120 50 l-5 22 h10 z M102 53 l-2 17 h8 z M138 53 l2 17 h-8 z" fill="#C47535"></path><path d="M40 102 l24 4 l-24 6 z M40 118 l20 2 l-20 5 z M200 102 l-24 4 l24 6 z M200 118 l-20 2 l20 5 z" fill="#C47535"></path><path d="M106 160 C104 124 112 96 120 78 C128 96 136 124 134 160 Z" fill="#FFF4E3"></path><ellipse cx="120" cy="146" rx="54" ry="30" fill="#FFF4E3"></ellipse></g><ellipse cx="120" cy="110" rx="80" ry="62" fill="none" stroke="#3B2A1D" stroke-width="6"></ellipse><ellipse cx="96" cy="221" rx="19" ry="11" fill="#FFF4E3" stroke="#3B2A1D" stroke-width="5"></ellipse><path d="M91 214 v6 M101 214 v6" stroke="#3B2A1D" stroke-width="3" stroke-linecap="round"></path><ellipse cx="144" cy="221" rx="19" ry="11" fill="#FFF4E3" stroke="#3B2A1D" stroke-width="5"></ellipse><path d="M139 214 v6 M149 214 v6" stroke="#3B2A1D" stroke-width="3" stroke-linecap="round"></path><ellipse cx="88" cy="112" rx="9" ry="10.5" fill="#2E2018"></ellipse><ellipse cx="152" cy="112" rx="9" ry="10.5" fill="#2E2018"></ellipse><circle cx="91.42" cy="107.38" r="3.2" fill="#fff"></circle><circle cx="155.42" cy="107.38" r="3.2" fill="#fff"></circle><ellipse cx="54" cy="134" rx="12" ry="7" fill="#F29C88" opacity="0.55"></ellipse><ellipse cx="186" cy="134" rx="12" ry="7" fill="#F29C88" opacity="0.55"></ellipse><path d="M113 124 h14 q-3 6 -7 8 q-4 -2 -7 -8 z" fill="#E48F80" stroke="#3B2A1D" stroke-width="2.4" stroke-linejoin="round"></path><path d="M120 132 v3 M108 134 q6 7 12 0 q6 7 12 0" fill="none" stroke="#3B2A1D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path><path d="M46 120 l-22 -5 M46 130 l-23 2 M194 120 l22 -5 M194 130 l23 2" stroke="#3B2A1D" stroke-width="3.5" stroke-linecap="round"></path></svg>
+      <div class="name">nyandary</div>
+    </div>
+    <p class="reading">ニャンダリー</p>
+
+    <h1>毎日のひと記録が、<br>この子だけの<br>「いつも」になる。</h1>
+    <p class="lead">I love にゃんこの、いつもをカタチに。</p>
+
+    <div style="margin-top: 28px;">
+      <!-- 公開したら: この <span class="cta-btn soon"> を、Wandary の lp.html と同じ
+           <a class="cta-btn" href="https://apps.apple.com/jp/app/id〈App Store の ID〉"> … </a>
+           に差し替える。ページ下の最終CTAも同じ。差し替えたら、アプリ内ブラウザ用の
+           .iab-hint と script も Wandary から持ってくること -->
+      <span class="cta-btn soon">まもなく App Store へ</span>
+      <p class="cta-note">iPhone / iOS 17 以降 · アカウント登録は不要です</p>
+    </div>
+
+    <div class="hero-shot">
+      <div class="phone"><img src="img/home.png" alt="nyandary のホーム画面。朝・昼・夕・夜ごとに、その日の記録が並んでいる" width="640" height="1391"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="sec-label">Why nyandary</div>
+    <h2>猫には、散歩がありません。</h2>
+    <p class="sec-body">
+      犬は毎日の散歩で、いやでも様子が目に入ります。猫にはその機会がありません。
+      見に行かないと、一日会わない日もある。不調は行動ではなく、量とリズムのわずかなずれにしか出ません。
+    </p>
+    <p class="sec-body">
+      しかも猫の場合、分かるのは「した時刻」ではなく「見つけた時刻」です。
+      だから猫の記録は、犬の記録の焼き直しでは成立しません。<strong>比べる相手になる「この子のいつも」を、先に作るところから始まります。</strong>
+    </p>
+    <p class="sec-body">
+      nyandary は、そのためのアプリです。「記録をつけてください」とは頼みません。
+      <strong>すでにやっているお世話の、手が止まる一瞬に、1タップの置き場所を作ります。</strong>
+    </p>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="sec-label">Features</div>
+    <h2>つづくのは、増やさないから。</h2>
+
+    <div class="feature">
+      <div class="feature-text">
+        <h3>トイレを開けたら、掃除1回＝入力1回。</h3>
+        <p>
+          飼い主がいちばん気をつけている行動は、トイレ掃除です。その手が止まる数秒に置き場所を作りました。
+          個数と、かたまりの大きさ3段階。<strong>時刻は訊きません</strong>——猫の記録で分かるのは、見つけた時刻だけだからです。
+          毎日出るのは「掃除」と「毎日」の2つだけ。ケアも体重も、その場面が来たときにだけ現れます。
+        </p>
+      </div>
+      <div class="phone"><img src="img/record.png" alt="掃除の記録画面。おしっこ・うんちの個数と、かたまりの大きさを選ぶだけで保存できる" width="640" height="1391" loading="lazy"></div>
+    </div>
+
+    <div class="feature flip">
+      <div class="feature-text">
+        <h3>2週間で、この子の「いつも」ができる。</h3>
+        <p>
+          朝・昼・夕・夜それぞれの平常の姿が、言葉になって返ります。
+          崩れた日は、模様の違いとして目に入ります。カレンダーに付くのは記録のある日の点だけ。
+          <strong>書けなかった日を、強調したり責めたりはしません。</strong>
+        </p>
+      </div>
+      <div class="phone"><img src="img/review.png" alt="ふりかえりのカレンダー。記録のある日に点が並び、その日の記録が下にまとまっている" width="640" height="1391" loading="lazy"></div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-text">
+        <h3>「いつからですか？」に、迷わず答えられる。</h3>
+        <p>
+          直近7日・14日・30日を選ぶだけで、10秒で読める1枚にまとまります。
+          冒頭には「飼い主による観察記録であり、診断・評価を含みません」を固定で置いています。
+          同じ1枚が、<strong>獣医師・ペットシッター・留守番を頼む家族・災害への備え</strong>の4つで使えます。
+          通院が猫の負担になるなら、飼い主だけで相談に行くときにも、これがそのまま材料になります。
+        </p>
+      </div>
+      <div class="phone"><img src="img/consult.png" alt="相談用の書き出し画面。トイレ・ごはん・吐いた・サインなどが、日付つきで1枚にまとまっている" width="640" height="1391" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="sec-label">Philosophy</div>
+    <h2>言わないことを、<br>先に決めてあります。</h2>
+    <p class="sec-body">
+      猫のふるまいは、1つの行動に1つの原因が対応しません。鑑別は、検査ができる獣医師の仕事です。
+      判定しないのは臆病だからではなく、<strong>判定できる情報が、記録の側にないから</strong>です。
+    </p>
+
+    <div class="says">
+      <div class="says-row">
+        <div class="says-head says-no">言いません</div>
+        <div class="says-head says-yes">代わりに、こう出します</div>
+      </div>
+      <div class="says-row">
+        <div class="says-no">異常の可能性があります</div>
+        <div class="says-yes">きのうのトイレは2回。この2週間は4回前後です</div>
+      </div>
+      <div class="says-row">
+        <div class="says-no">そろそろ爪切りの時期です</div>
+        <div class="says-yes">前回：3週間前</div>
+      </div>
+      <div class="says-row">
+        <div class="says-no">健康スコア 82点／今週は7日とも完食！</div>
+        <div class="says-yes">いつもと形が違った日：木曜</div>
+      </div>
+    </div>
+
+    <p class="sec-body">
+      悪い方向を警告しないのと同じ強さで、良い方向も祝いません。
+      「吐く回数が減った」が回復の証拠として読まれて、様子見が延びることがあるからです。
+      よく食べていても痩せる病気があります。<strong>中立とは、両方向に黙ることです。</strong>
+    </p>
+
+    <div class="quiet">
+      <h3>そのかわり、うっかりだけはお知らせします</h3>
+      <p>
+        お薬の時刻、月1回の体重、通院の前日。日付が決まっているものだけです。
+        赤色も警告アイコンも使いません。<strong>1日1通まで。</strong>記録がなかった日に、催促は届きません。
+      </p>
+    </div>
+
+    <div class="quiet">
+      <h3>「いばしょ」が、この子の一日を描きます</h3>
+      <p>
+        朝は窓辺、夕方は膝の上、夜はここで寝る。猫は好きな場所を時間で使い分けます。
+        その1つの記録が、うれしさにも、時間割にも、そして「いつもの場所に行かなくなった」にもなります。
+        ただし<strong>回数を月ごとに比べることはしません</strong>——先月より少ない日が、罠になるからです。
+      </p>
+    </div>
+
+    <div class="quiet">
+      <h3>猫に、何も付けません</h3>
+      <p>
+        首輪型のデバイスもカメラも要りません。買い替えも求めません。
+        <strong>猫の生活を1ミリも変えないこと</strong>を、機能より優先しています。
+        記録はお使いの iCloud に自動で保管され、機種変更してもそのまま引き継がれます。
+        アカウント登録は不要で、開発者があなたの記録を見ることはできません。
+      </p>
+    </div>
+
+    <div class="quiet">
+      <h3>そのあとも、残ります</h3>
+      <p>
+        お別れを登録すると、記録の要求も通知も止まります。日記だけは、書きたければ続けられます。
+        思い出を勝手に見せることはしません。記録は消させませんし、書き出して手元に残せます。
+        新しい子を迎えても、前の子の記録はそのまま並びます。
+      </p>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="sec-label">Story</div>
+    <h2>犬のつぎに、猫だった理由。</h2>
+
+    <div class="story-body">
+      <p>nyandary は、犬の記録アプリ <a href="https://wandary.jp/lp.html">Wandary</a> に続く2本目です。Wandary は、愛犬コウを見送ったあとに作りました。毎日見ていたはずなのに、診察室で聞かれたことに、うまく答えられなかったからです。</p>
+    </div>
+
+    <blockquote class="story-pull">
+      <span>いつからですか。</span>
+      <span>何日続いていますか。</span>
+      <span>前回と比べてどうですか。</span>
+    </blockquote>
+
+    <div class="story-body">
+      <p>同じことが、猫ではもっと起きていました。</p>
+
+      <p>猫の飼い主に話を聞き、調査を読んでいくうちに、いくつかの数字が重なって見えてきました。通院そのものが猫のストレスになると答えた人が約半数。健康診断を受けている人は4割に届きません。オンライン相談を使いたい人は6割を超えるのに、実際に使った人は数％でした。</p>
+
+      <p>猫を病院に連れていくのは、それ自体が大ごとです。だから多くの飼い主は、連れていくかどうかを家で判断しています。その判断を、記憶だけでやっている。</p>
+
+      <p>そして猫の記録アプリを探す人の多くは、健康なうちには探しません。何かが起きてから探します。その人に「まず2週間ためてください」と言うアプリは、その場で閉じられます。</p>
+
+      <p>だから nyandary は、初日から返すように作りました。前回いつ爪を切ったか。きょう何があったか。ベースラインがなくても答えられることが、ちゃんとあります。</p>
+
+      <p>解釈も判断もしません。それは先生の仕事です。こちらの仕事は、伝えたいことが伝わる形に、記録を整えるところまでです。</p>
+
+      <p>至らないところは、まだたくさんあると思います。ただ、猫と暮らしている人に見せても恥ずかしくないところまでは、詰めたつもりです。</p>
+    </div>
+
+    <p class="story-sign">なんでもなかった今日が、<br>いつか、いちばん確かな記録になります。</p>
+  </section>
+
+  <section style="padding-top: 0;">
+    <div class="sec-label">Price</div>
+    <h2>まずは、無料ではじめられます。</h2>
+
+    <div class="plans">
+      <div class="plan">
+        <div class="plan-name">無料プラン</div>
+        <div class="plan-price">0円</div>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#A97449" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>7本の動線すべてで記録できます</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#A97449" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>3頭まで登録できます</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#A97449" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>経過の通し表示・ケアの「前回いつ」</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#A97449" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>直近30日のふりかえり・週間日記</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#A97449" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>1枚の書き出しを、画像で共有</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#A97449" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>iCloud 自動同期・広告なし</li>
+        </ul>
+      </div>
+      <div class="plan premium">
+        <div class="plan-name">nyandary Premium</div>
+        <div class="plan-price">月額480円 <small>/ 年額4,800円</small></div>
+        <ul>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#A97449" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>全期間のふりかえり（30日より前も）</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#A97449" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>1枚の書き出しを PDF でも</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#A97449" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>4頭目からの登録</li>
+          <li><svg viewBox="0 0 20 20" fill="none" stroke="#A97449" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>季節のふりかえりのバックナンバー</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sec-body" style="font-size:13px;">
+      無料プランでも、記録そのものに制限はかけません。30日より前の記録が消えることもありません。
+    </p>
+  </section>
+
+</div>
+
+<div class="final">
+  <h2>きょうの、なんでもない<br>この子を残しませんか。</h2>
+  <p>「いつも」は、あとからは作れません。</p>
+  <!-- 公開したら: ヒーローと同じく <a class="cta-btn" href="…"> に差し替える -->
+  <span class="cta-btn soon">まもなく App Store へ</span>
+  <p class="cta-note">iPhone / iOS 17 以降 · アカウント登録は不要です</p>
+</div>
+
+<div class="wrap">
+  <p class="disclaimer">
+    ※本アプリは猫の観察記録を支援するものであり、獣医療行為や医学的な助言・診断を提供するものではありません。記録から健康状態を判定することはしません。体調に異変を感じた場合は、必ず獣医師にご相談ください。<br>
+    ※記録で分かることには限りがあります。血液検査でしか分からないものは、観察では分かりません。「記録しているから大丈夫」ではありません。<br>
+    ※Premium のお支払いは Apple ID に請求され、期間終了の24時間前までに解約しない限り自動更新されます。解約は App Store のアカウント設定からいつでも可能です。
+  </p>
+</div>
+
+<footer>
+  <div class="links">
+    <a href="https://wandary.jp/">運営・Wandary</a>
+  </div>
+  <p style="margin-top:10px;">利用規約とプライバシーポリシーは、アプリの「設定」からいつでも読めます。</p>
+  <p style="margin-top:6px;">© 2026 nyandary</p>
+</footer>
+
+</body>
+</html>
