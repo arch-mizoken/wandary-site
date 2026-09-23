@@ -13,6 +13,27 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 # 出したくないページはここに。いまは無し
 SKIP = set()
 
+# **このリポジトリにあっても、wandary.jp のページではないもの。**
+# nyandary は開発中の別サイトで、いずれ別ドメインへ移す。
+# sitemap に入れると、Google に「wandary.jp の一部です」と申告することになり、
+# 移したあとリダイレクトで後始末する羽目になる
+SKIP_DIRS = {"nyandary"}
+
+
+def tracked_html():
+    """**git が追跡している HTML だけ**を集める。
+
+    公開されているのは、コミットされたものだけ。作業中のファイルを
+    拾うと、**本番に無い URL を Google に案内する**ことになる。
+
+    実際 2026-09-23、開発中の別サイト (別ドメインへ移す予定のもの) が
+    作業フォルダに置かれていて、そのまま sitemap に入って公開された。
+    行き先は 404 だった。名前で除外すると、次の1件でまた同じことが起きる。
+    """
+    out = subprocess.run(["git", "ls-files", "*.html"],
+                         cwd=ROOT, capture_output=True, text=True).stdout.split()
+    return sorted(ROOT / rel for rel in out)
+
 # 検索から来てほしい順。Google は priority をほぼ見ないが、
 # 「どれが主役か」を書き残しておく意味で付けている
 PRIORITY = {
@@ -39,8 +60,8 @@ def lastmod(path: pathlib.Path) -> str:
     return out or datetime.date.today().isoformat()
 
 rows = []
-for f in sorted(ROOT.rglob("*.html")):
-    if ".git" in f.parts:
+for f in tracked_html():
+    if any(part in SKIP_DIRS for part in f.relative_to(ROOT).parts):
         continue
     u = url_for(f)
     if u in SKIP:

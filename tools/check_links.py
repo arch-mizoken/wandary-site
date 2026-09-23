@@ -12,10 +12,12 @@
 
 外部リンク (https://) は見ない。アフィリエイトのリンクを叩くことになるため。
 """
-import pathlib, re, sys
+import pathlib, re, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SKIP_DIRS = {"_articles", "_goods", "_drafts", "tools", ".git"}
+# nyandary は開発中の別サイト (いずれ別ドメインへ移す)。
+# wandary.jp のページではないので、ここでは見ない
+SKIP_DIRS = {"_articles", "_goods", "_drafts", "tools", ".git", "nyandary"}
 
 def targets(href):
     """そのURLが、どのファイルに当たるか"""
@@ -62,8 +64,12 @@ def check_facts():
 def main():
     stale = check_facts()
     broken = []
-    pages = [p for p in ROOT.rglob("*.html")
-             if not any(part in SKIP_DIRS or part.startswith(".") for part in p.parts)]
+    # sitemap.py と同じ見方にする。**追跡していない作業中のファイルは、
+    # 公開されていない。** 見ても意味が無いし、途中の原稿で赤くなるだけ
+    tracked = subprocess.run(["git", "ls-files", "*.html"],
+                             cwd=ROOT, capture_output=True, text=True).stdout.split()
+    pages = [ROOT / rel for rel in tracked
+             if not any(part in SKIP_DIRS for part in pathlib.Path(rel).parts)]
     for page in sorted(pages):
         s = page.read_text(encoding="utf-8")
         for href in sorted(set(re.findall(r'(?:href|src)="(/[^"]*)"', s))):
