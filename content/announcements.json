@@ -1,6 +1,15 @@
 {
-  "version": 5,
+  "version": 6,
   "announcements": [
+    {
+      "id": "v1-1-2-weight",
+      "dateString": "2026-09-24",
+      "emoji": "⚖️",
+      "title": "体重をはかる日を、お知らせします",
+      "body": "月に一度、はかる日をお知らせします。日にちは前回はかった日に合わせます。通院のお知らせからは、前回の通院からの経過が開くようになりました。",
+      "link": "https://wandary.jp/updates/#v1-1-2",
+      "minAppVersion": "1.1.2"
+    },
     {
       "id": "goods-toolbox-open",
       "dateString": "2026-09-23",
