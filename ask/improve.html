@@ -168,6 +168,14 @@
   var skip = document.getElementById("skip");
   var area = null;
 
+  // どの入口から来たか。**月刊誌の声かけが効いているかを見るため**だけに使う。
+  // 知らない値は捨てる (URL に何を書かれても、受け口に渡さない)
+  var door = null;
+  try {
+    var f = new URLSearchParams(location.search).get("from");
+    if (f === "settings" || f === "magazine") door = f;
+  } catch (e) {}
+
   function show(el) {
     [q, free, done, ng].forEach(function (x) { x.hidden = x !== el; });
     window.scrollTo(0, 0);
@@ -179,6 +187,14 @@
       document.querySelectorAll(".choice").forEach(function (x) { x.disabled = true; });
       b.setAttribute("aria-pressed", "true");
       area = b.dataset.a;
+      // 入口ぶんは別に数える。**失敗しても本題は止めない**
+      if (door) {
+        fetch(BASE + "/v1/ask", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ schema: 1, question: "improve_door", answer: door })
+        }).catch(function () {});
+      }
       fetch(BASE + "/v1/ask", {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -209,7 +225,8 @@
     fetch(BASE + "/v1/voice", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ schema: 1, question: "improve", area: area, text: text })
+      body: JSON.stringify({ schema: 1, question: "improve",
+                             area: area, door: door, text: text })
     }).then(function (r) {
       if (!r.ok) throw new Error("ng");
       show(done);
