@@ -5,6 +5,7 @@
 
 lastmod は git の最終コミット日から取る。手で書くとすぐ嘘になるため。
 """
+import re
 import subprocess, pathlib, datetime
 
 BASE = "https://wandary.jp"
@@ -59,12 +60,27 @@ def lastmod(path: pathlib.Path) -> str:
     ).stdout.strip()
     return out or datetime.date.today().isoformat()
 
+NOINDEX = re.compile(r'<meta\s+name=["\']robots["\'][^>]*noindex', re.I)
+
+
+def is_noindex(path: pathlib.Path) -> bool:
+    """noindex のページは地図に載せない。
+
+    載せると「来てください」と言いながら「載せないで」と言うことになる。
+    Search Console には「noindex により除外」が並ぶだけで、誰の得にもならない。
+    **ページ側の宣言をそのまま信じる**ので、一覧を手で保つ必要がない
+    """
+    return bool(NOINDEX.search(path.read_text(encoding="utf-8", errors="ignore")))
+
+
 rows = []
 for f in tracked_html():
     if any(part in SKIP_DIRS for part in f.relative_to(ROOT).parts):
         continue
     u = url_for(f)
     if u in SKIP:
+        continue
+    if is_noindex(f):
         continue
     rows.append((u, lastmod(f)))
 
