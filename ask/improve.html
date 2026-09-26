@@ -51,7 +51,12 @@
     padding: 14px 30px; cursor: pointer; margin-top: 16px;
   }
   .send[disabled] { opacity: .4; cursor: default; }
-  .skip { display: inline-block; margin: 14px 0 0 18px; font-size: 14px; color: var(--ink-faint); cursor: pointer; background: none; border: none; font-family: inherit; text-decoration: underline; }
+  /* 逃げ道。**指で押せる高さを持たせる** (下線の21pxぶんだけだと当たらない) */
+  .skip {
+    display: inline-block; margin: 14px 0 0 6px; padding: 15px 12px;
+    font-size: 14px; color: var(--ink-faint); cursor: pointer;
+    background: none; border: none; font-family: inherit; text-decoration: underline;
+  }
   .warnbox { border: 1.5px solid var(--line, #e6e0d8); border-radius: 14px; padding: 14px 16px; margin-top: 20px; background: #fff; }
 </style>
 </head>
