@@ -1,0 +1,23 @@
+/* nyandary のページ。共通のレイアウトは /style.css をそのまま使い、
+   色だけキャラメルに置き換える (Wandary のティールと混ざらないように)。
+   値は Nyandary/DesignSystem/Theme.swift の caramel と揃えてある。 */
+:root {
+  --accent:      #A97449;
+  --accent-dark: #8C5E33;
+  --tint:        #F4E7D6;
+  --paper:       #F3EDE4;
+  --paper2:      #FBF7F1;
+  --card:        #FFFFFF;
+  --ink:         #33291F;
+  --ink-body:    #4A3E31;
+  --ink-soft:    #6B5B4A;
+  --ink-faint:   #9C8D7C;
+  --line:        #E8DCCB;
+  --line-2:      #F1E9DC;
+  --brand-ink:   #7A5029;
+}
+/* ロゴはキャラクターの顔。四角く切らずに、そのまま置く */
+.brand img, .sign img { border-radius: 0; }
+.brand img { width: 34px; height: 30px; }
+.sign img  { width: 40px; height: 35px; }
+/* ヘッダーは「アプリについて / サポート」の2つだけ。犬のほうへの導線はフッターに置く */
