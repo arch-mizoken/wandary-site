@@ -1,6 +1,15 @@
 {
-  "version": 6,
+  "version": 7,
   "announcements": [
+    {
+      "id": "v1-1-4-lighter-record",
+      "dateString": "2026-09-29",
+      "emoji": "📝",
+      "title": "記録の画面を、軽くしました",
+      "body": "ごはんもうんちも、開いてすぐ目に入るのは「いつ」と「どうだったか」だけになりました。種類やメモ、写真は、書きたい日だけ開いてください。",
+      "link": "https://wandary.jp/updates/#v1-1-4",
+      "minAppVersion": "1.1.4"
+    },
     {
       "id": "v1-1-2-weight",
       "dateString": "2026-09-24",
