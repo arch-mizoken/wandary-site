@@ -49,7 +49,10 @@ def parse(path):
     meta = {}
     for line in head.strip().splitlines():
         k, v = line.split(":", 1)
-        meta[k.strip()] = v.strip()
+        k = k.strip()
+        if k in meta:
+            raise SystemExit(f"{path.name}: {k} が2度書かれています")
+        meta[k] = v.strip()
     meta["slug"] = path.stem
     meta["body"] = body.strip()
     for need in ("cat", "date", "title", "lead", "cta", "ctabody"):
