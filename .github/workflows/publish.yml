@@ -21,18 +21,21 @@ jobs:
       - name: 記事とサイトマップを作り直す
         run: |
           python3 tools/build_articles.py
+          # sitemap.py は git が知っているファイルだけを載せる。
+          # 先に add しておかないと、**今日出した記事が今日の地図に入らない**
+          git add knowledge
           python3 tools/sitemap.py
+          git add sitemap.xml
         env:
           TZ: Asia/Tokyo
 
       - name: 変わっていたらコミットする
         run: |
-          if git diff --quiet; then
+          if git diff --cached --quiet; then
             echo "公開待ちの記事はありません"
             exit 0
           fi
           git config user.name  "wandary-bot"
           git config user.email "noreply@wandary.jp"
-          git add knowledge sitemap.xml
           git commit -m "予約していた記事を公開する"
           git push

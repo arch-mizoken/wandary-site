@@ -5,6 +5,7 @@
 
 lastmod は git の最終コミット日から取る。手で書くとすぐ嘘になるため。
 """
+import sys
 import re
 import subprocess, pathlib, datetime
 
@@ -100,7 +101,24 @@ xml = f'''<?xml version="1.0" encoding="UTF-8"?>
 {body}
 </urlset>
 '''
-(ROOT / "sitemap.xml").write_text(xml)
+# いちど地図に載せた URL が消えるのは、たいてい事故。
+# 記事の振り分けを変えたり、生成の条件を変えたりしたときに起きる。
+# 検索結果に出ている URL が 404 になるので、**書き換える前に止める。**
+# わざと消すときだけ --allow-drop を付ける (noindex にした、記事を取り下げた)
+out = ROOT / "sitemap.xml"
+if out.exists():
+    before = set(re.findall(r"<loc>(.*?)</loc>", out.read_text(encoding="utf-8")))
+    gone = sorted(before - {f"{BASE}{u}" for u, _ in rows})
+    if gone and "--allow-drop" not in sys.argv:
+        print("地図から消えようとしている URL があります:")
+        for u in gone:
+            print(f"  - {u}")
+        print("\nわざと消すなら --allow-drop を付けてください。")
+        sys.exit(1)
+    for u in gone:
+        print(f"  ※ 地図から外しました: {u}")
+
+out.write_text(xml)
 print(f"sitemap.xml: {len(rows)} ページ")
 for u, m in rows:
     print(f"  {m}  {u}")
