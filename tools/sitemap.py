@@ -34,7 +34,9 @@ def tracked_html():
     """
     out = subprocess.run(["git", "ls-files", "*.html"],
                          cwd=ROOT, capture_output=True, text=True).stdout.split()
-    return sorted(ROOT / rel for rel in out)
+    # set でまとめる。rebase で衝突している最中は、git ls-files が
+    # 同じパスを stage ごとに何度も返すので、同じURLが二重に載る
+    return sorted({ROOT / rel for rel in out})
 
 # 検索から来てほしい順。Google は priority をほぼ見ないが、
 # 「どれが主役か」を書き残しておく意味で付けている
