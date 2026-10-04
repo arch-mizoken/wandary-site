@@ -85,8 +85,33 @@ def check_scripts(pages):
     return len(bad)
 
 
+def check_ga_and_policy():
+    """計測していることと、公表していることが、合っているか。
+
+    片方だけになっているのが、いちばんまずい:
+    - ID は入っているが、ポリシーに書いていない → 公表していない送信
+    - ポリシーには書いてあるが、ID が空 → 使っていないものを使うと書いている
+
+    `tools/enable_ga.py` が両方を同時に書き換えるので、ふつうはずれない。
+    手で片方だけ触ったときに、ここで止まる
+    """
+    ga = (ROOT / "ga.js").read_text()
+    measuring = bool(re.search(r"^var WANDARY_GA = '(G-[^']+)';", ga, re.M))
+    disclosed = "Google アナリティクス" in (ROOT / "privacy.html").read_text()
+    if measuring == disclosed:
+        return 0
+    if measuring:
+        print("ga.js に測定IDが入っていますが、プライバシーポリシーに書いてありません。")
+    else:
+        print("プライバシーポリシーに Google アナリティクスと書いてありますが、"
+              "ga.js の測定IDが空です。")
+    print("  python3 tools/enable_ga.py G-XXXXXXXXXX   (または --off)\n")
+    return 1
+
+
 def main():
     stale = check_facts()
+    mismatch = check_ga_and_policy()
     broken = []
     # sitemap.py と同じ見方にする。**追跡していない作業中のファイルは、
     # 公開されていない。** 見ても意味が無いし、途中の原稿で赤くなるだけ
@@ -104,7 +129,7 @@ def main():
 
     if not broken:
         print(f"内部リンク: {len(pages)} ページ、切れているものはありません")
-        return 1 if (stale or unloaded) else 0
+        return 1 if (stale or unloaded or mismatch) else 0
 
     print("行き先が無いリンク:")
     for page, href in broken:
