@@ -165,6 +165,7 @@ def build(preview_dir=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script defer src="/ga.js"></script>
 <title>{html.escape(m["title"])} | Wandary 編集部の道具箱</title>
 <meta name="description" content="{html.escape(m["lead"], quote=True)}">
 <link rel="canonical" href="{BASE}/goods/{m["slug"]}.html">
@@ -203,6 +204,7 @@ def build(preview_dir=None):
   </div>
 </main>
 {foot}
+<script defer src="/goods/track.js"></script>
 </body>
 </html>
 '''
@@ -230,6 +232,7 @@ def build(preview_dir=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script defer src="/ga.js"></script>
 <title>編集部の道具箱 | Wandary</title>
 <meta name="description" content="チワワと20年暮らしてきた Wandary 編集部が、実際に使ってきた道具と選び方をまとめています。">
 <link rel="canonical" href="{BASE}/goods/">

@@ -634,6 +634,7 @@ def build_hubs(all_metas, head, foot):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script defer src="/ga.js"></script>
 <title>{html.escape(hub["title"])} | Wandary</title>
 <meta name="description" content="{html.escape(hub["lead"], quote=True)}">
 <link rel="canonical" href="{BASE}/knowledge/{hub["slug"]}.html">
@@ -724,6 +725,7 @@ def build():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script defer src="/ga.js"></script>
 <title>{html.escape(search_title(m))} | Wandary</title>
 <meta name="description" content="{html.escape(search_description(m), quote=True)}">
 <link rel="canonical" href="{BASE}/knowledge/{m["slug"]}.html">
@@ -794,6 +796,7 @@ def build():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script defer src="/ga.js"></script>
 <title>よみもの | Wandary</title>
 <meta name="description" content="犬と暮らすうえで知っておきたいことを、飼い主の目線でまとめています。">
 <link rel="canonical" href="{BASE}/knowledge/">

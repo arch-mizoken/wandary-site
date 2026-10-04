@@ -61,6 +61,30 @@ def check_facts():
     return len(old)
 
 
+def check_scripts(pages):
+    """ページが読むべき script を、読んでいるか。
+
+    `goods/track.js` は、商品ページに data-outbound を置いたのに
+    **どこからも読み込まれていなかった。**計測が動いていないことは、
+    画面を見ても分からない。だから機械に見張らせる。
+    """
+    bad = []
+    for page in pages:
+        s = page.read_text(encoding="utf-8")
+        if '<meta name="robots" content="noindex' in s:
+            continue
+        if 'src="/ga.js"' not in s:
+            bad.append((page, "/ga.js"))
+        if "data-outbound" in s and 'src="/goods/track.js"' not in s:
+            bad.append((page, "/goods/track.js"))
+    if bad:
+        print("読み込まれていない script があります:")
+        for page, src in bad:
+            print(f"  {page.relative_to(ROOT)}  ←  {src}")
+        print()
+    return len(bad)
+
+
 def main():
     stale = check_facts()
     broken = []
@@ -76,9 +100,11 @@ def main():
             if not targets(href).exists():
                 broken.append((page.relative_to(ROOT), href))
 
+    unloaded = check_scripts(sorted(pages))
+
     if not broken:
         print(f"内部リンク: {len(pages)} ページ、切れているものはありません")
-        return 1 if stale else 0
+        return 1 if (stale or unloaded) else 0
 
     print("行き先が無いリンク:")
     for page, href in broken:
