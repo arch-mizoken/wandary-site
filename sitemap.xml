@@ -87,7 +87,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/cost-expectation.html</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -107,7 +107,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/emergency-or-morning.html</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-05</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -168,6 +168,11 @@
   <url>
     <loc>https://wandary.jp/knowledge/medication-log.html</loc>
     <lastmod>2026-10-05</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://wandary.jp/knowledge/medicine-refuse.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -248,6 +253,11 @@
   <url>
     <loc>https://wandary.jp/knowledge/seasonal-baseline.html</loc>
     <lastmod>2026-10-05</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://wandary.jp/knowledge/second-opinion.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
