@@ -1,6 +1,15 @@
 {
-  "version": 7,
+  "version": 8,
   "announcements": [
+    {
+      "id": "v1-1-5-save-notice",
+      "dateString": "2026-10-06",
+      "emoji": "🛟",
+      "title": "記録が保存できなかったとき、必ずお伝えします",
+      "body": "これまで、体重や通院などの画面で保存に失敗すると、黙って終わっていました。記録をしまうすべての画面でお伝えするようにしました。これまでの記録が消えることはありません。",
+      "link": "https://wandary.jp/updates/#v1-1-5",
+      "minAppVersion": "1.1.5"
+    },
     {
       "id": "v1-1-4-lighter-record",
       "dateString": "2026-09-29",
