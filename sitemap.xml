@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/anesthesia.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -97,7 +97,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/cost-expectation.html</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -281,13 +281,28 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://wandary.jp/knowledge/senior-sleep.html</loc>
+    <lastmod>2026-10-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://wandary.jp/knowledge/senior-starts.html</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-09</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://wandary.jp/knowledge/senior-steps.html</loc>
+    <lastmod>2026-10-11</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/senior-walk.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-09</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://wandary.jp/knowledge/senior.html</loc>
+    <lastmod>2026-10-11</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -337,7 +352,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/vet.html</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -347,7 +362,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/walk-ground-temp.html</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
