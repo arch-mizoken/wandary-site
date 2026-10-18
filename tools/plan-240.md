@@ -2,6 +2,9 @@
 
 `plan-100.md` の続き。あちらは書き終わり（119本）。ここはその次の120本。
 
+**2026-10-18、120本すべて書き終わり。**記事は 239本。
+公開は 2026-11-05 から 2028-02-22 まで、週2〜3本で並べてある。
+
 ## なぜ足せるのか
 
 書くより先に、**出せる速さ**を測った。
@@ -69,88 +72,88 @@ YMYL のいちばん際どいところ。**次の3つを守る。**
 ### しつけ・くせ
 | slug | タイトル | 狙い |
 |---|---|---|
-| pulling-on-leash | 散歩で引っ張るのを、道具と歩き方で減らす | 犬 散歩 引っ張る |
-| picking-up-food | 拾い食いを、叱らずに減らす | 犬 拾い食い |
-| jumping-on-people | 飛びつきは、下ろしてから褒める | 犬 飛びつき |
-| separation-anxiety | 留守番で吠える・壊す子に、何から試すか | 犬 分離不安 |
-| guest-barking | 来客に吠えるときの、段取り | 犬 来客 吠える |
-| adult-toilet-fail | 成犬になってからの粗相 | 犬 トイレ 失敗 成犬 |
-| recall-training | 呼んだら来る、を安全のために | 犬 呼び戻し |
-| crate-adult | 成犬からのクレート練習 | 犬 クレート 成犬 |
-| counter-surfing | テーブルの上のものを取る | 犬 盗み食い |
-| digging-chewing | 掘る・噛む・壊すを、置き換える | 犬 いたずら |
-| dog-to-dog | 散歩中に、ほかの犬に吠える | 犬 他の犬 吠える |
-| car-ride-training | 車に慣らす手順 | 犬 車 練習 |
-| grooming-tolerance | 爪切りと歯みがきを、嫌がらなくする練習 | 犬 爪切り 嫌がる |
-| food-aggression | ごはんのときに唸る | 犬 food 唸る |
-| leash-biting | リードを噛む・くわえる | 犬 リード 噛む |
-| training-record | しつけは、記録をつけると早く終わる | 犬 しつけ 記録 |
+| ✅ pulling-on-leash | 散歩で引っ張るのを、道具と歩き方で減らす | 犬 散歩 引っ張る |
+| ✅ picking-up-food | 拾い食いを、叱らずに減らす | 犬 拾い食い |
+| ✅ jumping-on-people | 飛びつきは、下ろしてから褒める | 犬 飛びつき |
+| ✅ separation-anxiety | 留守番で吠える・壊す子に、何から試すか | 犬 分離不安 |
+| ✅ guest-barking | 来客に吠えるときの、段取り | 犬 来客 吠える |
+| ✅ adult-toilet-fail | 成犬になってからの粗相 | 犬 トイレ 失敗 成犬 |
+| ✅ recall-training | 呼んだら来る、を安全のために | 犬 呼び戻し |
+| ✅ crate-adult | 成犬からのクレート練習 | 犬 クレート 成犬 |
+| ✅ counter-surfing | テーブルの上のものを取る | 犬 盗み食い |
+| ✅ digging-chewing | 掘る・噛む・壊すを、置き換える | 犬 いたずら |
+| ✅ dog-to-dog | 散歩中に、ほかの犬に吠える | 犬 他の犬 吠える |
+| ✅ car-ride-training | 車に慣らす手順 | 犬 車 練習 |
+| ✅ grooming-tolerance | 爪切りと歯みがきを、嫌がらなくする練習 | 犬 爪切り 嫌がる |
+| ✅ food-aggression | ごはんのときに唸る | 犬 food 唸る |
+| ✅ leash-biting | リードを噛む・くわえる | 犬 リード 噛む |
+| ✅ training-record | しつけは、記録をつけると早く終わる | 犬 しつけ 記録 |
 
 ### からだ（部位別の見方）
 | slug | タイトル | 狙い |
 |---|---|---|
-| ear-check | 耳のにおいと、汚れの見方 | 犬 耳 汚れ |
-| nose-changes | 鼻の乾きと色は、どこまで気にするか | 犬 鼻 乾く |
-| anal-glands | 肛門腺の絞り方と、頻度 | 犬 肛門腺 |
-| paw-licking | 足を舐めつづけるとき | 犬 足 舐める |
-| joint-signs | 関節の衰えは、動きはじめに出る | 犬 関節 サイン |
-| belly-check | お腹は、さわり方を決めておく | 犬 お腹 張り |
-| gum-color | 歯ぐきの色は、急ぐかどうかの手がかり | 犬 歯茎 白い |
-| tail-signs | しっぽの下がり方 | 犬 しっぽ 下がる |
-| back-pain | 背中を気にする・抱っこを嫌がる | 犬 背中 痛がる |
-| drooling | よだれが増えたとき | 犬 よだれ 多い |
-| scratching-count | 掻く回数を、数えてみる | 犬 掻く 多い |
-| head-shaking | 頭を振る・傾ける | 犬 頭を振る |
-| weight-shift | 体重のかけ方が変わる | 犬 足をかばう |
-| body-map | さわって確かめる順番を、決めておく | 犬 健康チェック |
+| ✅ ear-check | 耳のにおいと、汚れの見方 | 犬 耳 汚れ |
+| ✅ nose-changes | 鼻の乾きと色は、どこまで気にするか | 犬 鼻 乾く |
+| ✅ anal-glands | 肛門腺の絞り方と、頻度 | 犬 肛門腺 |
+| ✅ paw-licking | 足を舐めつづけるとき | 犬 足 舐める |
+| ✅ joint-signs | 関節の衰えは、動きはじめに出る | 犬 関節 サイン |
+| ✅ belly-check | お腹は、さわり方を決めておく | 犬 お腹 張り |
+| ✅ gum-color | 歯ぐきの色は、急ぐかどうかの手がかり | 犬 歯茎 白い |
+| ✅ tail-signs | しっぽの下がり方 | 犬 しっぽ 下がる |
+| ✅ back-pain | 背中を気にする・抱っこを嫌がる | 犬 背中 痛がる |
+| ✅ drooling | よだれが増えたとき | 犬 よだれ 多い |
+| ✅ scratching-count | 掻く回数を、数えてみる | 犬 掻く 多い |
+| ✅ head-shaking | 頭を振る・傾ける | 犬 頭を振る |
+| ✅ weight-shift | 体重のかけ方が変わる | 犬 足をかばう |
+| ✅ body-map | さわって確かめる順番を、決めておく | 犬 健康チェック |
 
 ### 症状の伝え方
 | slug | タイトル | 狙い |
 |---|---|---|
-| diarrhea-tell | 下痢のとき、獣医師に伝えること | 犬 下痢 病院 |
-| seizure-record | けいれんは、時間を計る | 犬 けいれん 記録 |
-| urine-trouble | おしっこの出かたが変わったとき | 犬 おしっこ 出ない |
-| limping-tell | いつから・どの足か、を言えるようにする | 犬 足 痛がる 伝え方 |
-| itching-tell | かゆみは、場所と回数で伝える | 犬 かゆみ 伝え方 |
-| breathing-tell | 呼吸がおかしいときの伝え方 | 犬 呼吸 おかしい |
-| fever-check | 熱があるかを、家でどう見るか | 犬 熱 測り方 |
-| appetite-tell | 食欲の落ち方を、段階で伝える | 犬 食欲不振 伝え方 |
-| swelling-tell | 腫れを見つけたとき | 犬 腫れ |
-| eye-discharge | 目やにの色と量 | 犬 目やに |
-| ear-tell | 耳を気にするときの伝え方 | 犬 耳 かゆがる |
-| vomit-color | 吐いたものの、色と中身 | 犬 嘔吐 色 |
-| blood-in-stool | 便に血が混じったとき | 犬 血便 |
-| emergency-list | 待てないサインを、1枚にまとめる | 犬 救急 サイン |
+| ✅ diarrhea-tell | 下痢のとき、獣医師に伝えること | 犬 下痢 病院 |
+| ✅ seizure-record | けいれんは、時間を計る | 犬 けいれん 記録 |
+| ✅ urine-trouble | おしっこの出かたが変わったとき | 犬 おしっこ 出ない |
+| ✅ limping-tell | いつから・どの足か、を言えるようにする | 犬 足 痛がる 伝え方 |
+| ✅ itching-tell | かゆみは、場所と回数で伝える | 犬 かゆみ 伝え方 |
+| ✅ breathing-tell | 呼吸がおかしいときの伝え方 | 犬 呼吸 おかしい |
+| ✅ fever-check | 熱があるかを、家でどう見るか | 犬 熱 測り方 |
+| ✅ appetite-tell | 食欲の落ち方を、段階で伝える | 犬 食欲不振 伝え方 |
+| ✅ swelling-tell | 腫れを見つけたとき | 犬 腫れ |
+| ✅ eye-discharge | 目やにの色と量 | 犬 目やに |
+| ✅ ear-tell | 耳を気にするときの伝え方 | 犬 耳 かゆがる |
+| ✅ vomit-color | 吐いたものの、色と中身 | 犬 嘔吐 色 |
+| ✅ blood-in-stool | 便に血が混じったとき | 犬 血便 |
+| ✅ emergency-list | 待てないサインを、1枚にまとめる | 犬 救急 サイン |
 
 ### おでかけ・あずける
 | slug | タイトル | 狙い |
 |---|---|---|
-| dog-run | ドッグランで、最初にやること | ドッグラン デビュー |
-| dog-cafe | 犬とカフェに行く前に | 犬 カフェ マナー |
-| train-with-dog | 電車に犬を乗せる | 犬 電車 |
-| car-long-drive | 長距離ドライブの、休憩の取り方 | 犬 車 長距離 |
-| plane-with-dog | 飛行機に乗せるかどうか | 犬 飛行機 |
-| pet-hotel-choose | ペットホテルの選び方 | ペットホテル 選び方 |
-| pet-sitter | ペットシッターに頼むとき | ペットシッター |
-| grooming-salon | トリミングで、伝えておくこと | トリミング 伝え方 |
-| evacuation-with-dog | 避難所に、犬と行けるか | 犬 避難所 |
-| dog-friendly-stay | 犬と泊まれる宿の、見るところ | 犬 泊まれる宿 |
-| leaving-with-family | 実家に預けるときの引き継ぎ | 犬 預ける 実家 |
-| outing-record | 出かけた日の記録が、あとで効く | 犬 おでかけ 記録 |
+| ✅ dog-run | ドッグランで、最初にやること | ドッグラン デビュー |
+| ✅ dog-cafe | 犬とカフェに行く前に | 犬 カフェ マナー |
+| ✅ train-with-dog | 電車に犬を乗せる | 犬 電車 |
+| ✅ car-long-drive | 長距離ドライブの、休憩の取り方 | 犬 車 長距離 |
+| ✅ plane-with-dog | 飛行機に乗せるかどうか | 犬 飛行機 |
+| ✅ pet-hotel-choose | ペットホテルの選び方 | ペットホテル 選び方 |
+| ✅ pet-sitter | ペットシッターに頼むとき | ペットシッター |
+| ✅ grooming-salon | トリミングで、伝えておくこと | トリミング 伝え方 |
+| ✅ evacuation-with-dog | 避難所に、犬と行けるか | 犬 避難所 |
+| ✅ dog-friendly-stay | 犬と泊まれる宿の、見るところ | 犬 泊まれる宿 |
+| ✅ leaving-with-family | 実家に預けるときの引き継ぎ | 犬 預ける 実家 |
+| ✅ outing-record | 出かけた日の記録が、あとで効く | 犬 おでかけ 記録 |
 
 ### お金と手続き
 | slug | タイトル | 狙い |
 |---|---|---|
-| surgery-cost | 手術になったとき、いくらかかるか | 犬 手術 費用 |
-| insurance-claim | ペット保険の請求のしかた | ペット保険 請求 |
-| medical-deduction | ペットの医療費は、控除になるのか | ペット 医療費 控除 |
-| emergency-fund | 急な出費に、どう備えるか | 犬 医療費 備え |
-| bite-report | 咬傷事故の届け出 | 犬 咬傷 届出 |
-| neighbor-trouble | 鳴き声とフンの、近隣トラブル | 犬 近所 苦情 |
-| rental-with-dog | ペット可の賃貸で、気をつけること | 犬 賃貸 |
-| off-leash-rules | ノーリードが禁じられている理由 | 犬 ノーリード |
-| breeder-petshop | 迎える前に、確認しておくこと | 子犬 迎える 確認 |
-| ownership-change | 飼い主が変わるときの届け出 | 犬 譲渡 手続き |
+| ✅ surgery-cost | 手術になったとき、いくらかかるか | 犬 手術 費用 |
+| ✅ insurance-claim | ペット保険の請求のしかた | ペット保険 請求 |
+| ✅ medical-deduction | ペットの医療費は、控除になるのか | ペット 医療費 控除 |
+| ✅ emergency-fund | 急な出費に、どう備えるか | 犬 医療費 備え |
+| ✅ bite-report | 咬傷事故の届け出 | 犬 咬傷 届出 |
+| ✅ neighbor-trouble | 鳴き声とフンの、近隣トラブル | 犬 近所 苦情 |
+| ✅ rental-with-dog | ペット可の賃貸で、気をつけること | 犬 賃貸 |
+| ✅ off-leash-rules | ノーリードが禁じられている理由 | 犬 ノーリード |
+| ✅ breeder-petshop | 迎える前に、確認しておくこと | 子犬 迎える 確認 |
+| ✅ ownership-change | 飼い主が変わるときの届け出 | 犬 譲渡 手続き |
 
 ### たのしむ・続ける
 **書かないと決めたもの:** 看取り・安楽死・ペットロス・火葬など、別れを連想させるテーマは
@@ -161,32 +164,32 @@ YMYL のいちばん際どいところ。**次の3つを守る。**
 
 | slug | タイトル | 狙い |
 |---|---|---|
-| birthday-record | 迎えた日と誕生日を、記録の節目にする | 犬 誕生日 |
-| photo-monthly | 月に1枚、同じ場所で撮っておく | 犬 写真 毎月 |
-| first-year-look-back | 1年ぶんの記録を、見返してみる | 犬 記録 振り返り |
-| good-day-record | 「何もなかったいい日」も残す | 犬 日記 書き方 |
-| walk-course | 散歩コースは、何本か持っておく | 犬 散歩 コース |
-| rainy-day-play | 雨の日の、家の中の遊び | 犬 室内 遊び |
-| nose-work | 鼻を使う遊びは、短くてもよく効く | 犬 ノーズワーク |
-| massage-touch | さわる時間が、そのまま健康チェックになる | 犬 マッサージ |
-| new-season-walk | 季節が変わったら、コースを見直す | 犬 散歩 季節 |
-| family-roles | 家族の役割を、先に決めておく | 犬 世話 家族 |
+| ✅ birthday-record | 迎えた日と誕生日を、記録の節目にする | 犬 誕生日 |
+| ✅ photo-monthly | 月に1枚、同じ場所で撮っておく | 犬 写真 毎月 |
+| ✅ first-year-look-back | 1年ぶんの記録を、見返してみる | 犬 記録 振り返り |
+| ✅ good-day-record | 「何もなかったいい日」も残す | 犬 日記 書き方 |
+| ✅ walk-course | 散歩コースは、何本か持っておく | 犬 散歩 コース |
+| ✅ rainy-day-play | 雨の日の、家の中の遊び | 犬 室内 遊び |
+| ✅ nose-work | 鼻を使う遊びは、短くてもよく効く | 犬 ノーズワーク |
+| ✅ massage-touch | さわる時間が、そのまま健康チェックになる | 犬 マッサージ |
+| ✅ new-season-walk | 季節が変わったら、コースを見直す | 犬 散歩 季節 |
+| ✅ family-roles | 家族の役割を、先に決めておく | 犬 世話 家族 |
 
 ### 道具の選び方
 | slug | タイトル | 狙い |
 |---|---|---|
-| collar-vs-harness | 首輪とハーネス、どちらにするか | 犬 ハーネス 首輪 |
-| leash-length | リードの長さと、伸縮リード | 犬 リード 選び方 |
-| bed-choose | ベッドは、寝方で選ぶ | 犬 ベッド 選び方 |
-| bowl-height | 食器の高さと素材 | 犬 食器 選び方 |
-| crate-size | クレートの大きさの決め方 | 犬 クレート サイズ |
-| cart-choose | カートが要るのは、いつからか | 犬 カート |
-| toy-safety | おもちゃは、壊れ方を見る | 犬 おもちゃ 安全 |
-| clothes-when | 服は、いつ必要になるか | 犬 服 必要 |
-| toothbrush-kit | 歯みがきの道具を、3つに絞る | 犬 歯ブラシ 選び方 |
-| nail-clipper | 爪切りの種類と、黒い爪 | 犬 爪切り 黒い |
-| cooling-gear | 夏の冷却グッズ、効くものと効かないもの | 犬 冷却 グッズ |
-| gear-record | 道具を替えた日を、記録に残す | 犬 用品 記録 |
+| ✅ collar-vs-harness | 首輪とハーネス、どちらにするか | 犬 ハーネス 首輪 |
+| ✅ leash-length | リードの長さと、伸縮リード | 犬 リード 選び方 |
+| ✅ bed-choose | ベッドは、寝方で選ぶ | 犬 ベッド 選び方 |
+| ✅ bowl-height | 食器の高さと素材 | 犬 食器 選び方 |
+| ✅ crate-size | クレートの大きさの決め方 | 犬 クレート サイズ |
+| ✅ cart-choose | カートが要るのは、いつからか | 犬 カート |
+| ✅ toy-safety | おもちゃは、壊れ方を見る | 犬 おもちゃ 安全 |
+| ✅ clothes-when | 服は、いつ必要になるか | 犬 服 必要 |
+| ✅ toothbrush-kit | 歯みがきの道具を、3つに絞る | 犬 歯ブラシ 選び方 |
+| ✅ nail-clipper | 爪切りの種類と、黒い爪 | 犬 爪切り 黒い |
+| ✅ cooling-gear | 夏の冷却グッズ、効くものと効かないもの | 犬 冷却 グッズ |
+| ✅ gear-record | 道具を替えた日を、記録に残す | 犬 用品 記録 |
 
 ### 体格・犬種で変わること
 **犬種名を並べた記事は書かない。**一次体験はチワワ1犬種ぶんしかなく、薄くなる。
@@ -194,50 +197,50 @@ YMYL のいちばん際どいところ。**次の3つを守る。**
 
 | slug | タイトル | 狙い |
 |---|---|---|
-| small-dog-care | 小型犬で、とくに気をつけること | 小型犬 注意 |
-| large-dog-care | 大型犬で、とくに気をつけること | 大型犬 注意 |
-| brachycephalic | 短頭種の呼吸と、夏 | 短頭種 注意 |
-| long-back | 胴長の子の、段差と抱っこ | 胴長 犬 段差 |
-| double-coat | ダブルコートの換毛と手入れ | ダブルコート 犬 |
-| toy-breed-sugar | 超小型犬で、気をつける低血糖 | 超小型犬 低血糖 |
-| senior-by-size | シニアになる年齢は、体格で違う | 犬 シニア 大型犬 |
-| mixed-breed | ミックスの子は、何を基準に見るか | ミックス犬 健康 |
-| breed-guess | 犬種が分からないとき | 保護犬 犬種 |
-| breed-and-records | 犬種より、その子の記録 | 犬種 健康 違い |
+| ✅ small-dog-care | 小型犬で、とくに気をつけること | 小型犬 注意 |
+| ✅ large-dog-care | 大型犬で、とくに気をつけること | 大型犬 注意 |
+| ✅ brachycephalic | 短頭種の呼吸と、夏 | 短頭種 注意 |
+| ✅ long-back | 胴長の子の、段差と抱っこ | 胴長 犬 段差 |
+| ✅ double-coat | ダブルコートの換毛と手入れ | ダブルコート 犬 |
+| ✅ toy-breed-sugar | 超小型犬で、気をつける低血糖 | 超小型犬 低血糖 |
+| ✅ senior-by-size | シニアになる年齢は、体格で違う | 犬 シニア 大型犬 |
+| ✅ mixed-breed | ミックスの子は、何を基準に見るか | ミックス犬 健康 |
+| ✅ breed-guess | 犬種が分からないとき | 保護犬 犬種 |
+| ✅ breed-and-records | 犬種より、その子の記録 | 犬種 健康 違い |
 
 ### こいぬ 深掘り
 | slug | タイトル | 狙い |
 |---|---|---|
-| puppy-diarrhea | 子犬のうんちが緩いとき | 子犬 下痢 |
-| puppy-teething | 歯の生え変わり | 子犬 歯 抜ける |
-| puppy-sleep | 子犬は、どれくらい寝るのか | 子犬 睡眠時間 |
-| puppy-separation | ひとりに慣らす、最初の1か月 | 子犬 分離不安 |
-| puppy-play | 遊びの時間と、やりすぎ | 子犬 遊び 時間 |
-| puppy-insurance | 保険は、いつ入るか | 子犬 ペット保険 |
-| puppy-neuter | 避妊・去勢を考える時期 | 子犬 避妊 去勢 |
-| puppy-record-start | 迎えた日から、何を残すか | 子犬 記録 |
+| ✅ puppy-diarrhea | 子犬のうんちが緩いとき | 子犬 下痢 |
+| ✅ puppy-teething | 歯の生え変わり | 子犬 歯 抜ける |
+| ✅ puppy-sleep | 子犬は、どれくらい寝るのか | 子犬 睡眠時間 |
+| ✅ puppy-separation | ひとりに慣らす、最初の1か月 | 子犬 分離不安 |
+| ✅ puppy-play | 遊びの時間と、やりすぎ | 子犬 遊び 時間 |
+| ✅ puppy-insurance | 保険は、いつ入るか | 子犬 ペット保険 |
+| ✅ puppy-neuter | 避妊・去勢を考える時期 | 子犬 避妊 去勢 |
+| ✅ puppy-record-start | 迎えた日から、何を残すか | 子犬 記録 |
 
 ### シニア 深掘り
 | slug | タイトル | 狙い |
 |---|---|---|
-| senior-checkup | シニアの健康診断に、何を足すか | 老犬 健康診断 |
-| senior-bath | シニアのシャンプーを、短くする | 老犬 シャンプー |
-| senior-weight-loss | 食べているのに痩せる | 老犬 食べるのに痩せる |
-| senior-confusion | 夜中に歩きまわる | 老犬 徘徊 |
-| senior-incontinence | おむつを使うかどうか | 老犬 おむつ |
-| senior-floor | 床と段差を、先に変える | 老犬 滑る 床 |
-| senior-outing | 歩けなくなっても、外に出る | 老犬 散歩 カート |
-| senior-family | 介護を、家族で分ける | 老犬 介護 分担 |
+| ✅ senior-checkup | シニアの健康診断に、何を足すか | 老犬 健康診断 |
+| ✅ senior-bath | シニアのシャンプーを、短くする | 老犬 シャンプー |
+| ✅ senior-weight-loss | 食べているのに痩せる | 老犬 食べるのに痩せる |
+| ✅ senior-confusion | 夜中に歩きまわる | 老犬 徘徊 |
+| ✅ senior-incontinence | おむつを使うかどうか | 老犬 おむつ |
+| ✅ senior-floor | 床と段差を、先に変える | 老犬 滑る 床 |
+| ✅ senior-outing | 歩けなくなっても、外に出る | 老犬 散歩 カート |
+| ✅ senior-family | 介護を、家族で分ける | 老犬 介護 分担 |
 
 ### きろく 深掘り
 | slug | タイトル | 狙い |
 |---|---|---|
-| record-two-people | 2人で同じ子を記録すると、ずれる | 犬 記録 共有 |
-| record-what-not | 書かなくていいこと | 犬 記録 やりすぎ |
-| record-restart | 途切れた記録を、また始める | 犬 記録 再開 |
-| record-vet-ready | 診察の前の晩に、5分だけ見直す | 動物病院 準備 記録 |
-| record-year | 1年たった記録を、どう使うか | 犬 記録 1年 |
-| record-backup | 記録が消えないようにする | 犬 記録 バックアップ |
+| ✅ record-two-people | 2人で同じ子を記録すると、ずれる | 犬 記録 共有 |
+| ✅ record-what-not | 書かなくていいこと | 犬 記録 やりすぎ |
+| ✅ record-restart | 途切れた記録を、また始める | 犬 記録 再開 |
+| ✅ record-vet-ready | 診察の前の晩に、5分だけ見直す | 動物病院 準備 記録 |
+| ✅ record-year | 1年たった記録を、どう使うか | 犬 記録 1年 |
+| ✅ record-backup | 記録が消えないようにする | 犬 記録 バックアップ |
 
 ---
 
