@@ -730,6 +730,21 @@ def build():
     # 日付が未来の記事はまだ出さない。4本 → 100本を一度に公開すると
     # 「スケーリングされたコンテンツの不正使用」に当たりやすく、
     # ペナルティはドメイン全体 (LP・サポートも) に効く。書きためて小出しにする
+    # 日本語に混ざった、別の文字体系。
+    # 「預ける」と打ったつもりが「предける」になっていた (2026-10-18)。
+    # 見た目が似ていて、読み返しても気づけない
+    strays = []
+    for m in everything:
+        bad = {c for c in m["title"] + m["lead"] + m["body"]
+               if "\u0400" <= c <= "\u04FF" or "\u0370" <= c <= "\u03FF"}
+        if bad:
+            strays.append((m["slug"], "".join(sorted(bad))))
+    if strays:
+        print("日本語でない文字が混ざっています:")
+        for slug, chars in strays:
+            print(f"  {slug}  →  {chars}")
+        raise SystemExit(1)
+
     # 【要記入】が残っているものは、日付が来ても出さない。
     # 公開は毎朝の workflow が自動でやるので、書きかけだと気づかないまま出る
     holes = [m for m in everything if "【要記入" in m["body"]]
