@@ -1,5 +1,5 @@
 cat: てつづき
-date: 2026-12-15
+date: 2026-12-14
 related: microchip, dog-registration, moving-notification
 title: 亡くなったときに必要になる、届け出
 seotitle: 犬が亡くなったときの届け出

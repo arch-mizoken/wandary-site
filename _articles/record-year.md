@@ -1,5 +1,5 @@
 cat: きろく
-date: 2027-07-02
+date: 2027-02-16
 related: first-year-look-back, seasonal-baseline, birthday-record
 title: 1年たった記録を、どう使うか
 seotitle: 犬の記録を1年後に使う
@@ -69,4 +69,4 @@ ctabody: Wandary は日付で記録をさかのぼれます。去年の同じ時
 
 **この違いは、診察室で大きい。**
 
-> 【要記入：うちで1年ぶんの記録が役に立った話。先回りできたことがあれば、それも】
+> 【あれば：うちで1年ぶんの記録が役に立った話。先回りできたことがあれば、それも】

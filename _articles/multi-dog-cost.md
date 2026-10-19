@@ -1,5 +1,5 @@
 cat: たとうがい
-date: 2026-12-02
+date: 2026-12-03
 related: dog-license-fee, multi-dog-age-gap, insurance-compare
 title: 2匹目で、費用はどれだけ増えるか
 seotitle: 多頭飼いの費用は何倍か

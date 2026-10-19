@@ -1,5 +1,5 @@
 cat: ごはん
-date: 2026-11-18
+date: 2026-11-23
 related: senior-teeth, senior-weight, senior-starts
 title: シニア用に切り替える判断は、年齢ではありません
 seotitle: シニア犬のフードへの切り替え

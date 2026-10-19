@@ -54,6 +54,12 @@ def parse(path):
             raise SystemExit(f"{path.name}: {k} が2度書かれています")
         meta[k] = v.strip()
     meta["slug"] = path.stem
+    # 【あれば：…】は、**公開を止めない。**
+    # 一次体験が入れば良くなるが、無くても記事として立つところに置く印。
+    # 書き出すときに消える (読み手には見えない)。
+    # 止めるのは【要記入：…】のほうだけ (そちらは体験が本体)
+    body = "\n\n".join(blk for blk in body.strip().split("\n\n")
+                        if "【あれば" not in blk)
     meta["body"] = body.strip()
     # seotitle を必須にしている理由は search_title() に書いてある。
     # 無いと、誰も検索しない言葉が <title> になって出ていく

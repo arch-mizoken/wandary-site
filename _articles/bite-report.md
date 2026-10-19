@@ -1,5 +1,5 @@
 cat: てつづき
-date: 2027-12-28
+date: 2027-04-21
 related: dog-registration, neighbor-trouble, off-leash-rules
 title: 咬傷事故の届け出
 seotitle: 犬が人を噛んだときの届け出
@@ -79,4 +79,4 @@ ctabody: Wandary は気づいたことを一言で残せます。日付と状況
 - 相手の情報
 - **その後のやりとり**
 
-> 【要記入：うちでひやりとした話があれば。予防のためにやっていること】
+> 【あれば：うちでひやりとした話があれば。予防のためにやっていること】
