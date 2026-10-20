@@ -1,6 +1,15 @@
 {
-  "version": 8,
+  "version": 9,
   "announcements": [
+    {
+      "id": "v1-1-6-coarse-location",
+      "dateString": "2026-10-20",
+      "emoji": "📍",
+      "title": "お天気に使う位置情報を、大まかにしました",
+      "body": "気温と気圧を出すためにお借りしている位置情報を、町のひとかたまりくらいまで粗くしました。表示される気温も気圧も、これまでと変わりません。記録と写真は、これまでどおりお使いの iPhone と iCloud の中だけにあります。",
+      "link": "https://wandary.jp/updates/#v1-1-6",
+      "minAppVersion": "1.1.6"
+    },
     {
       "id": "v1-1-5-save-notice",
       "dateString": "2026-10-06",
