@@ -171,6 +171,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://wandary.jp/knowledge/food.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://wandary.jp/knowledge/gait-video.html</loc>
     <lastmod>2026-10-18</lastmod>
     <priority>0.5</priority>
@@ -183,6 +188,11 @@
   <url>
     <loc>https://wandary.jp/knowledge/hospital-stress.html</loc>
     <lastmod>2026-10-18</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://wandary.jp/knowledge/how-much-food.html</loc>
+    <lastmod>2026-11-09</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
