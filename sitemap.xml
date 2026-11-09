@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -166,18 +166,28 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://wandary.jp/knowledge/food-and-poop.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://wandary.jp/knowledge/food-switch.html</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/food.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/gait-video.html</loc>
     <lastmod>2026-10-18</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://wandary.jp/knowledge/heater-burns.html</loc>
+    <lastmod>2026-11-10</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -192,7 +202,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/how-much-food.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -202,7 +212,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/living.html</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -262,7 +272,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/not-eating-count.html</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -272,7 +282,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/paperwork.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -347,7 +357,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/puppy.html</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -372,7 +382,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/records.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -383,6 +393,11 @@
   <url>
     <loc>https://wandary.jp/knowledge/seasonal-baseline.html</loc>
     <lastmod>2026-10-05</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://wandary.jp/knowledge/seasons.html</loc>
+    <lastmod>2026-11-10</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -452,7 +467,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/senior.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -462,7 +477,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/signs.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
@@ -512,7 +527,7 @@
   </url>
   <url>
     <loc>https://wandary.jp/knowledge/vet.html</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
